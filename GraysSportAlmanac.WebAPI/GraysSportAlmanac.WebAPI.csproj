@@ -207,6 +207,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
@@ -309,6 +310,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GraysSportAlmanac.Model\GraysSportAlmanac.Model.csproj">
+      <Project>{727A0235-B24A-4AAE-8BAB-19E1C80CE4BC}</Project>
+      <Name>GraysSportAlmanac.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GraysSportAlmanac.Services\GraysSportAlmanac.Services.csproj">
+      <Project>{E3BEBD3D-D926-424F-8AA1-F433E4A9DAAD}</Project>
+      <Name>GraysSportAlmanac.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

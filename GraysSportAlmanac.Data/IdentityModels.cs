@@ -5,7 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity.Owin;
+
 
 
 namespace GraysSportAlmanac.Data
@@ -39,6 +39,7 @@ namespace GraysSportAlmanac.Data
         public DbSet<Post> Posts { get; set; }
 
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<Group> Groups { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
