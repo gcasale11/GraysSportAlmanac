@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Comment.cs" />
     <Compile Include="Group.cs" />
+    <Compile Include="GroupPost.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Profile.cs" />
