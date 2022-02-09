@@ -1,5 +1,6 @@
 ﻿using GraysSportAlmanac.Model;
 using GraysSportAlmanac.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ using System.Web.Http;
 namespace GraysSportAlmanac.WebAPI.Controllers
 {
     [Authorize]
+    [RoutePrefix("api/profile")]
     public class PostController : ApiController
     {
         public IHttpActionResult Get()
@@ -34,7 +36,7 @@ namespace GraysSportAlmanac.WebAPI.Controllers
 
         private PostService CreatePostService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserID());
+            var userId = Guid.Parse(User.Identity.GetUserId());
             var postService = new PostService(userId);
             return postService;
         }
