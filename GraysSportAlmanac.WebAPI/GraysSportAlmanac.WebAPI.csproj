@@ -310,6 +310,16 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GraysSportAlmanac.Model\GraysSportAlmanac.Model.csproj">
+      <Project>{727a0235-b24a-4aae-8bab-19e1c80ce4bc}</Project>
+      <Name>GraysSportAlmanac.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GraysSportAlmanac.Services\GraysSportAlmanac.Services.csproj">
+      <Project>{e3bebd3d-d926-424f-8aa1-f433e4a9daad}</Project>
+      <Name>GraysSportAlmanac.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
