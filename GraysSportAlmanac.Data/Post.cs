@@ -14,7 +14,8 @@ namespace GraysSportAlmanac.Data
         public Guid PostId { get; set; }
 
         [ForeignKey(nameof(Profile))]
-        public Profile ProfileId { get; set; }
+        public int ProfileId { get; set; }
+        public virtual Profile Profile { get; set; }
 
         //property for User Name?
 

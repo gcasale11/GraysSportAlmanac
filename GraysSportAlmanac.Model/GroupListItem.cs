@@ -13,8 +13,8 @@ namespace GraysSportAlmanac.Model
         [Key]
         public Guid GroupID { get; set; }
 
-        [ForeignKey(nameof(ProfileListItem))]
-        public ProfileListItem ProfileId { get; set; }
+        
+        public int ProfileId { get; set; }
 
         public string GroupName { get; set; }
         //List of Users Property

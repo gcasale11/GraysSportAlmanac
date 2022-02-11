@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using GraysSportAlmanac.WebAPI.Providers;
 using GraysSportAlmanac.WebAPI.Models;
+using GraysSportAlmanac.Data;
 
 namespace GraysSportAlmanac.WebAPI
 {

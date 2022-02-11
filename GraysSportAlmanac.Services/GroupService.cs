@@ -14,7 +14,7 @@ namespace GraysSportAlmanac.Services
 
         public GroupService(Guid groupId)
         {
-            groupId = _groupId;
+            _groupId = groupId;
         }
 
         public bool CreateGroup(GroupCreate model)

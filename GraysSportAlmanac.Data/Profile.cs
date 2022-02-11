@@ -14,6 +14,7 @@ namespace GraysSportAlmanac.Data
 
         public Guid  OwnerId { get; set; }
 
+        [Required]
         public string UserName { get; set; }
 
         public string Record { get; set; }

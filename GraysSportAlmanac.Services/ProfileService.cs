@@ -52,7 +52,7 @@ namespace GraysSportAlmanac.Services
                         {
                             ProfileId = e.ProfileId,
                             UserName = e.UserName,
-                            Record = e.Record
+                            /*Record = e.Record*/
                         }
                         );
                 return query.ToArray();
@@ -73,9 +73,9 @@ namespace GraysSportAlmanac.Services
                             ProfileId = entity.ProfileId,
                             OwnerId = entity.OwnerId,
                             UserName = entity.UserName,
-                            Record = entity.Record,
+                            /*Record = entity.Record,
                             UnitSize = entity.UnitSize,
-                            Units = entity.Units
+                            Units = entity.Units*/
                         };
                 }
             }

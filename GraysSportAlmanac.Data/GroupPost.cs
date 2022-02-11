@@ -14,11 +14,12 @@ namespace GraysSportAlmanac.Data
         public Guid GroupPostId { get; set; }
 
         //I think this might need to be in the Group instead of here but not 100% sure
-        [ForeignKey(nameof(Group))]
-        public Group GroupId { get; set; }
+        /*[ForeignKey(nameof(Group))]
+        public int GroupId { get; set; }*/
 
         [ForeignKey(nameof(Profile))]
-        public Profile ProfileId { get; set; }
+        public int ProfileId { get; set; }
+        public virtual Profile Profile { get; set; }
 
         public DateTime BetDate { get; set; }
         public decimal Risked { get; set; }

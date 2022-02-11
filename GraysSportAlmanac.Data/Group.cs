@@ -12,9 +12,10 @@ namespace GraysSportAlmanac.Data
     {
         [Key]
         public Guid GroupId { get; set; }
-        
+
         [ForeignKey(nameof(Profile))]
-        public Profile ProfileId { get; set; }
+        public int ProfileId { get; set; }
+        public virtual Profile Profile { get; set; }
 
         public string GroupName { get; set; }
         //List of Users property

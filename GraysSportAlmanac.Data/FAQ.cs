@@ -15,16 +15,16 @@ namespace GraysSportAlmanac.Data
 
         [Required]
         public Guid AuthorId { get; set; }
+        
 
-        [ForeignKey(nameof(Post))]
+        /*[ForeignKey(nameof(Post))]
         public int PostId { get; set; }
         public string Question { get; set; }
-        public virtual Post Post { get; set; }
 
         [ForeignKey(nameof(Comment))]
         public int CommentId { get; set; }
-        public string Response { get; set; }
-        public virtual Comment Comment { get; set; }
+        public string Response { get; set; }*/
+        
 
 
 
