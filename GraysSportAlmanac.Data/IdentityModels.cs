@@ -37,7 +37,7 @@ namespace GraysSportAlmanac.Data
         
         public DbSet<Profile> Profiles { get; set; }
         public DbSet<Post> Posts { get; set; }
-
+        public DbSet<FAQ> FAQs { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Group> Groups { get; set; }
         public DbSet<GroupPost> GroupPosts { get; set; }
