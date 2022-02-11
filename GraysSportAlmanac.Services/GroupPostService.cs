@@ -14,7 +14,7 @@ namespace GraysSportAlmanac.Services
 
         public GroupPostService(Guid groupPostId)
         {
-            groupPostId = _groupPostId;
+            _groupPostId = groupPostId;
         }
 
         public bool CreateGroupPost(GroupPostCreate model)

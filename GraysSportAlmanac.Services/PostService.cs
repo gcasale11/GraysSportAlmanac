@@ -14,7 +14,7 @@ namespace GraysSportAlmanac.Services
         
         public PostService(Guid postId)
         {
-            postId = _postId;
+            _postId = postId;
         }
 
         public bool CreatePost(PostCreate model)

@@ -58,9 +58,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comment.cs" />
+    <Compile Include="FAQ.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="GroupPost.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202202110133365_InitialCreate.cs" />
+    <Compile Include="Migrations\202202110133365_InitialCreate.Designer.cs">
+      <DependentUpon>202202110133365_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202110153336_CreateProfile.cs" />
+    <Compile Include="Migrations\202202110153336_CreateProfile.Designer.cs">
+      <DependentUpon>202202110153336_CreateProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +78,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202202110133365_InitialCreate.resx">
+      <DependentUpon>202202110133365_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202110153336_CreateProfile.resx">
+      <DependentUpon>202202110153336_CreateProfile.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
