@@ -11,7 +11,7 @@ using System.Web.Http;
 namespace GraysSportAlmanac.WebAPI.Controllers
 {
     [Authorize]
-    [RoutePrefix("api/comment")]
+    [RoutePrefix("api/profile")]
     public class CommentController : ApiController
     {
         public IHttpActionResult Get()
