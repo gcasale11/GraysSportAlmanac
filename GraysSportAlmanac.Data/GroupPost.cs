@@ -13,9 +13,9 @@ namespace GraysSportAlmanac.Data
         [Key]
         public Guid GroupPostId { get; set; }
 
-        //I think this might need to be in the Group instead of here but not 100% sure
-        /*[ForeignKey(nameof(Group))]
-        public int GroupId { get; set; }*/
+        [ForeignKey(nameof(Group))]
+        public int GroupId { get; set; }
+        public virtual Group Group { get; set; }
 
         [ForeignKey(nameof(Profile))]
         public int ProfileId { get; set; }
