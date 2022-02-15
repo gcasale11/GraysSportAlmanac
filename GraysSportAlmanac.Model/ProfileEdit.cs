@@ -11,15 +11,10 @@ namespace GraysSportAlmanac.Model
     {
         
         public int ProfileId { get; set; }
-        public string Record { get; set; }
 
-        public decimal TotalRisked { get; set; }
-
-        public decimal TotalAccount { get; set; }
-        public decimal UnitSize { get; set; }
-
-        public int Units { get; set; }
-
+        [Display(Name = "Bio")]
+        public string Bio { get; set; }
+        
 
     }
 }

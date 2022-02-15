@@ -24,9 +24,14 @@ namespace GraysSportAlmanac.Data
         [Required]
         public DateTimeOffset CreateUtc { get; set; }
 
-        /*[ForeignKey(nameof(PostId)]
+
+        [ForeignKey(nameof(Profile))]
+        public int ProfileId { get; set; }
+        public virtual Profile Profile { get; set; }
+
+        [ForeignKey(nameof(PostId))]
         public int PostId { get; set; }
 
-        public virtual Post Post { get; set; }*/
+        public virtual Post Post { get; set; }
     }
 }
