@@ -23,7 +23,7 @@ namespace GraysSportAlmanac.Services
                 new Group()
                 {
                     GroupId = _groupId,
-                    //ProfileId = model.ProfileId,
+                    ProfileId = model.ProfileId,
                     GroupName = model.GroupName,
                     RankingWL = model.RankingWL,
                     RankingTA = model.RankingTA,

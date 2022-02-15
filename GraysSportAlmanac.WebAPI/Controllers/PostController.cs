@@ -11,7 +11,7 @@ using System.Web.Http;
 namespace GraysSportAlmanac.WebAPI.Controllers
 {
     [Authorize]
-    [RoutePrefix("api/profile")]
+    [RoutePrefix("api/post")]
     public class PostController : ApiController
     {
         public IHttpActionResult Get()
