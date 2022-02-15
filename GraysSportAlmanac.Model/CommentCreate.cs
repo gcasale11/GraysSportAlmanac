@@ -12,14 +12,14 @@ namespace GraysSportAlmanac.Model
         [Required]
         public string ContentComment { get; set; }
 
-        //public int PostId {get; set;}
-
-        //public string UserName {get; set;}
-        //public DateTime BetDate {get; set;}
-        //public string Bet {get; set;}
-        //public decimal Risked {get; set;}
-        //public int Odds {get; set;}
-        //public string Result {get; set;}
-        //public decimal PayOut {get; set;}
+        [Display(Name = "User Name")]
+        public int ProfileId { get; set; }
+        public string UserName { get; set; }
+        
+        
+        /*DO WE NEED TO ADD A PLACE IN POST TO ADD WORDS THAT A COMMENT CLASS WOULD COMMENT ON?!?
+         * 
+         * public int PostId { get; set; }
+        public string WordForFriends { get; set; }*/
     }
 }

@@ -12,14 +12,16 @@ namespace GraysSportAlmanac.Model
         [Required]
         public string UserName { get; set; }
 
+        public string Bio { get; set; }
+
         /*public string Record { get; set; }
 
-        public decimal  TotalRisked { get; set; }
+        public decimal TotalRisked { get; set; }
 
         public decimal TotalAccount { get; set; }
         public decimal UnitSize { get; set; }
 
-        public int Units { get; set; }*/
-
+        public int Units { get; set; }
+*/
     }
 }

@@ -9,13 +9,15 @@ namespace GraysSportAlmanac.Model
 {
     public class ProfileListItem
     {
-        [Display]
+        [Display(Name = "Profile ID")]
         public int ProfileId { get; set; }
 
-        [Display]
+        [Display(Name ="UserName")]
         public string UserName { get; set; }
 
-        [Display]
-        public string Record { get; set; }
+        [Display(Name = "Bio")]
+        public string Bio { get; set; }
+
+        
     }
 }
