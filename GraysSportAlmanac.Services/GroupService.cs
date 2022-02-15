@@ -22,7 +22,7 @@ namespace GraysSportAlmanac.Services
             var entity =
                 new Group()
                 {
-                    GroupId = _groupId,
+                    AuthorId = _groupId,
                     ProfileId = model.ProfileId,
                     GroupName = model.GroupName,
                     RankingWL = model.RankingWL,
@@ -43,7 +43,7 @@ namespace GraysSportAlmanac.Services
                 var query =
                     ctx
                     .Groups
-                    .Where(e => e.GroupId == _groupId)
+                    .Where(e => e.AuthorId == _groupId)
                     .Select(
                         e =>
                         new GroupListItem
@@ -62,7 +62,7 @@ namespace GraysSportAlmanac.Services
                 var entity =
                     ctx
                     .Groups
-                    .Single(e => e.GroupId == id && e.GroupId == _groupId);
+                    .Single(e => e.AuthorId == id && e.AuthorId == _groupId);
                 return
                     new GroupDetail
                     {
@@ -90,7 +90,7 @@ namespace GraysSportAlmanac.Services
                 var entity =
                     ctx
                     .Groups
-                    .Single(e => e.GroupId == groupId);
+                    .Single(e => e.AuthorId == groupId);
                 ctx.Groups.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

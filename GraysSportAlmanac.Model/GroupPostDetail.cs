@@ -10,7 +10,7 @@ namespace GraysSportAlmanac.Model
    public class GroupPostDetail
     {
         [Key]
-        public Guid GroupPostId { get; set; }
+        public int GroupPostId { get; set; }
 
     /*
         [ForeignKey(nameof(Group))]

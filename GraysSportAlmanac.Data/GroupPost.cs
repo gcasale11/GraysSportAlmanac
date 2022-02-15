@@ -11,7 +11,8 @@ namespace GraysSportAlmanac.Data
     public class GroupPost
     {
         [Key]
-        public Guid GroupPostId { get; set; }
+        public int GroupPostId { get; set; }
+        public Guid AuthorId { get; set; }
 
         [ForeignKey(nameof(Group))]
         public int GroupId { get; set; }

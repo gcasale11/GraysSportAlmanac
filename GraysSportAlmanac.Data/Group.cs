@@ -11,7 +11,8 @@ namespace GraysSportAlmanac.Data
   public class Group
     {
         [Key]
-        public Guid GroupId { get; set; }
+        public int GroupId { get; set; }
+        public Guid AuthorId { get; set; }
 
         [ForeignKey(nameof(Profile))]
         public int ProfileId { get; set; }

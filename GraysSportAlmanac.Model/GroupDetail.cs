@@ -11,7 +11,7 @@ namespace GraysSportAlmanac.Model
     public class GroupDetail
     {
         [Key]
-        public Guid GroupId { get; set; }
+        public int GroupId { get; set; }
 
         [ForeignKey(nameof(ProfileDetail))]
         public ProfileDetail ProfileId { get; set; }
