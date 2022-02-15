@@ -9,6 +9,7 @@ namespace GraysSportAlmanac.Model
 {
     public class PostCreate
     {
+        public Guid PostId { get; set; }
         [Required]
         [MinLength(10, ErrorMessage = "Please enter date in 00/00/0000 format")]
         public DateTime BetDate { get; set; }

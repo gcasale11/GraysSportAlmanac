@@ -22,7 +22,7 @@ namespace GraysSportAlmanac.Services
             var entity =
                 new GroupPost()
                 {
-                    GroupPostId = model.GroupPostId,
+                    AuthorId = _groupPostId,
                     //ProfileId and GroupId I think need to go here
                     BetDate = model.BetDate,
                     Risked = model.Risked,
@@ -44,7 +44,7 @@ namespace GraysSportAlmanac.Services
                 var query =
                     ctx
                     .GroupPosts
-                    .Where(e => e.GroupPostId == _groupPostId)
+                    .Where(e => e.AuthorId == _groupPostId)
                     .Select(
                         e =>
                         new GroupPostListItem
@@ -63,7 +63,7 @@ namespace GraysSportAlmanac.Services
                 var entity =
                     ctx
                     .GroupPosts
-                    .Single(e => e.GroupPostId == id && e.GroupPostId == _groupPostId);
+                    .Single(e => e.AuthorId == id && e.AuthorId == _groupPostId);
                 return
                     new GroupPostDetail
                     {
@@ -91,7 +91,7 @@ namespace GraysSportAlmanac.Services
                 var entity =
                     ctx
                     .GroupPosts
-                    .Single(e => e.GroupPostId == groupPostId);
+                    .Single(e => e.AuthorId == groupPostId);
                 ctx.GroupPosts.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

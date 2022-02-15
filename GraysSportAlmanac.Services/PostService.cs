@@ -22,7 +22,7 @@ namespace GraysSportAlmanac.Services
             var entity =
                 new Post()
                 {
-                    PostId = _postId,
+                    AuthorId = _postId,
                     BetDate = model.BetDate,
                     Bet = model.Bet,
                     Risked = model.Risked,
@@ -45,7 +45,7 @@ namespace GraysSportAlmanac.Services
                 var query =
                     ctx
                     .Posts
-                    .Where(e => e.PostId == _postId)
+                    .Where(e => e.AuthorId == _postId)
                     .Select(
                         e =>
                         new PostListItem
@@ -64,7 +64,7 @@ namespace GraysSportAlmanac.Services
                 var entity =
                     ctx
                     .Posts
-                    .Single(e => e.PostId == id && e.PostId == _postId);
+                    .Single(e => e.AuthorId == id && e.AuthorId == _postId);
                 return
                     new PostDetail
                     {
@@ -94,7 +94,7 @@ namespace GraysSportAlmanac.Services
                 var entity =
                     ctx
                     .Posts
-                    .Single(e => e.PostId == postId);
+                    .Single(e => e.AuthorId == postId);
 
                 ctx.Posts.Remove(entity);
                 return ctx.SaveChanges() == 1;
