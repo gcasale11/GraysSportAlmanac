@@ -26,7 +26,7 @@ namespace GraysSportAlmanac.Model
 
         [Required]
       /*  [MaxLength(1, ErrorMessage = "Please enter the result of the wager with W for a win, L for a loss, P for a push")]*/
-        public char Result { get; set; }
+        public string Result { get; set; }
 
         public decimal Payout { get; set; }
     }

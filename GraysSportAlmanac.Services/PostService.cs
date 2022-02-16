@@ -74,7 +74,7 @@ namespace GraysSportAlmanac.Services
                         Bet = entity.Bet,
                         Risked = entity.Risked,
                         Odds = entity.Odds,
-                        /*Result = entity.Result,*/
+                        Result = entity.Result,
                         Payout = entity.Payout
 
                     };

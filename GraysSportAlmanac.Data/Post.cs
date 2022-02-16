@@ -24,7 +24,7 @@ namespace GraysSportAlmanac.Data
         public string Bet { get; set; }
         public decimal Risked { get; set; }
         public int Odds { get; set; }
-        public char Result { get; set; }
+        public string Result { get; set; }
         public decimal Payout { get; set; }
 
         public virtual ICollection<Comment> CollectionComment { get; set; }
