@@ -10,7 +10,6 @@ namespace GraysSportAlmanac.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "GraysSportAlmanac.Data.ApplicationDbContext";
         }
 
         protected override void Seed(GraysSportAlmanac.Data.ApplicationDbContext context)

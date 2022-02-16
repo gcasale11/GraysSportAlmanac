@@ -41,7 +41,7 @@ namespace GraysSportAlmanac.WebAPI.Controllers
             return postService;
         }
 
-        public IHttpActionResult Get(Guid id)
+        public IHttpActionResult Get(int id)
         {
             PostService postService = CreatePostService();
             var post = postService.GetPostByID(id);

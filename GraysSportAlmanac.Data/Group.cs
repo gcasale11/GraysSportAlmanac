@@ -25,6 +25,6 @@ namespace GraysSportAlmanac.Data
         public string GroupPost { get; set; }
 
 
-
+        public virtual ICollection<GroupPost> CollectionGroupPost { get; set; }
     }
 }

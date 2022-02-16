@@ -8,7 +8,7 @@ namespace GraysSportAlmanac.Model
 {
     public class FAQCreate
     {
-        public int PostId { get; set; }
+        
         public string Question { get; set; }
 
     }

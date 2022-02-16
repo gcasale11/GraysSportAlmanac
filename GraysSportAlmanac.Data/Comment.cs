@@ -29,9 +29,11 @@ namespace GraysSportAlmanac.Data
         public int ProfileId { get; set; }
         public virtual Profile Profile { get; set; }
 
-        [ForeignKey(nameof(PostId))]
+        [ForeignKey(nameof(Post))]
         public int PostId { get; set; }
 
         public virtual Post Post { get; set; }
+
+        public virtual ICollection<FAQ> CollectionFAQ { get; set; }
     }
 }

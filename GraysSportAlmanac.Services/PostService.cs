@@ -23,12 +23,13 @@ namespace GraysSportAlmanac.Services
                 new Post()
                 {
                     AuthorId = _postId,
+                    ProfileId = model.ProfileId,
                     BetDate = model.BetDate,
                     Bet = model.Bet,
                     Risked = model.Risked,
                     Odds = model.Odds,
                     Result = model.Result,
-                    Payout = model.Payout,
+                    Payout = model.Payout
 
                 };
             using (var ctx = new ApplicationDbContext())
@@ -57,18 +58,24 @@ namespace GraysSportAlmanac.Services
             }
         }
 
-        public PostDetail GetPostByID (Guid id)
+        public PostDetail GetPostByID (int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                     .Posts
-                    .Single(e => e.AuthorId == id && e.AuthorId == _postId);
+                    .Single(e => e.PostId == id && e.AuthorId == _postId);
                 return
                     new PostDetail
                     {
                         PostId = entity.PostId,
+                        BetDate = entity.BetDate,
+                        Bet = entity.Bet,
+                        Risked = entity.Risked,
+                        Odds = entity.Odds,
+                        /*Result = entity.Result,*/
+                        Payout = entity.Payout
 
                     };
             }

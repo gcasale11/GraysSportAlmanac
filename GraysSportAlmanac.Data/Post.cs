@@ -20,11 +20,13 @@ namespace GraysSportAlmanac.Data
 
         //property for User Name?
 
-        public DateTime BetDate { get; set; }
+        public string BetDate { get; set; }
         public string Bet { get; set; }
         public decimal Risked { get; set; }
         public int Odds { get; set; }
         public char Result { get; set; }
         public decimal Payout { get; set; }
+
+        public virtual ICollection<Comment> CollectionComment { get; set; }
     }
 }
