@@ -50,7 +50,13 @@ namespace GraysSportAlmanac.Services
                         e =>
                         new GroupPostListItem
                         {
-                            GroupPostId = e.GroupPostId
+                            GroupPostId = e.GroupPostId,
+                            ProfileId = e.ProfileId,
+                            BetDate = e.BetDate,
+                            Risked = e.Risked,
+                            Odds = e.Odds,
+                            Result = e.Result,
+                            Payout = e.Payout,
                         }
                         );
                 return query.ToArray();

@@ -48,7 +48,12 @@ namespace GraysSportAlmanac.Services
                         e =>
                         new GroupListItem
                         {
-                            GroupID = e.GroupId
+                            GroupID = e.GroupId,
+                              ProfileId = e.ProfileId,
+                            GroupName = e.GroupName,
+                            RankingWL = e.RankingWL,
+                            RankingTA = e.RankingTA,
+                            GroupPost = e.GroupPost
                         }
                         );
                 return query.ToArray();
