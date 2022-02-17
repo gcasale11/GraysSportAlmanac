@@ -12,9 +12,10 @@ namespace GraysSportAlmanac.Model
         [Required]
         public string UserName { get; set; }
 
+        [Required]
         public string Bio { get; set; }
 
-        /*public string Record { get; set; }
+        public string Record { get; set; }
 
         public decimal TotalRisked { get; set; }
 
@@ -22,6 +23,6 @@ namespace GraysSportAlmanac.Model
         public decimal UnitSize { get; set; }
 
         public int Units { get; set; }
-*/
+
     }
 }

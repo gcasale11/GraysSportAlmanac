@@ -17,6 +17,7 @@ namespace GraysSportAlmanac.Data
         [Required]
         public string UserName { get; set; }
 
+        [Required]
         public string Bio { get; set; }
 
         public string Record { get; set; }

@@ -23,7 +23,13 @@ namespace GraysSportAlmanac.Services
                 {
                     OwnerId = _userId,
                     UserName = model.UserName,
-                    Bio = model.Bio
+                    Bio = model.Bio,
+                    Record = model.Record,
+                    TotalRisked = model.TotalRisked,
+                    TotalAccount = model.TotalAccount,
+                    UnitSize = model.UnitSize,
+                    Units = model.Units
+                    
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -48,7 +54,12 @@ namespace GraysSportAlmanac.Services
                         {
                             ProfileId = e.ProfileId,
                             UserName = e.UserName,
-                            Bio = e.Bio
+                            Bio = e.Bio,
+                            Record = e.Record,
+                            TotalRisked = e.TotalRisked,
+                            TotalAccount = e.TotalAccount,
+                            UnitSize = e.UnitSize,
+                            Units = e.Units
                         }
                         );
                 return query.ToArray();
@@ -88,7 +99,9 @@ namespace GraysSportAlmanac.Services
                         .Profiles
                         .Single(e => e.ProfileId == model.ProfileId && e.OwnerId == _userId);
 
-                        entity.Bio = model.Bio;
+                    entity.UserName = model.UserName;
+                    entity.Bio = model.Bio;
+
                         
 
                     return ctx.SaveChanges() == 1;
