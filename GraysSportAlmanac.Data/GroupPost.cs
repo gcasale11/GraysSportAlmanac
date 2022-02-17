@@ -22,7 +22,7 @@ namespace GraysSportAlmanac.Data
         public int ProfileId { get; set; }
         public virtual Profile Profile { get; set; }
 
-        public DateTime BetDate { get; set; }
+        public string BetDate { get; set; }
         public decimal Risked { get; set; }
         public int Odds { get; set; }
         public string Result { get; set; }

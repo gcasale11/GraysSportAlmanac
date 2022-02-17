@@ -23,7 +23,8 @@ namespace GraysSportAlmanac.Services
                 new GroupPost()
                 {
                     AuthorId = _groupPostId,
-                    //ProfileId and GroupId I think need to go here
+                    GroupId = model.GroupId,
+                    ProfileId = model.ProfileId,
                     BetDate = model.BetDate,
                     Risked = model.Risked,
                     Odds = model.Odds,
