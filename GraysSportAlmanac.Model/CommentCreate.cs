@@ -10,7 +10,11 @@ namespace GraysSportAlmanac.Model
     public class CommentCreate
     {
         [Required]
+        public int PostId { get; set; }
+        [Required]
         public string ContentComment { get; set; }
+
+        
 
         [Display(Name = "User Name")]
         public int ProfileId { get; set; }

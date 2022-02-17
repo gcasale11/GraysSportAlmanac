@@ -62,9 +62,9 @@
     <Compile Include="Group.cs" />
     <Compile Include="GroupPost.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202202160119558_NewChanges.cs" />
-    <Compile Include="Migrations\202202160119558_NewChanges.Designer.cs">
-      <DependentUpon>202202160119558_NewChanges.cs</DependentUpon>
+    <Compile Include="Migrations\202202170045461_Again.cs" />
+    <Compile Include="Migrations\202202170045461_Again.Designer.cs">
+      <DependentUpon>202202170045461_Again.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
@@ -76,8 +76,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202202160119558_NewChanges.resx">
-      <DependentUpon>202202160119558_NewChanges.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202170045461_Again.resx">
+      <DependentUpon>202202170045461_Again.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

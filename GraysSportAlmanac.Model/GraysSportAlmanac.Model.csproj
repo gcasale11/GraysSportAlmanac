@@ -68,5 +68,11 @@
     <Compile Include="ProfileListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GraysSportAlmanac.Data\GraysSportAlmanac.Data.csproj">
+      <Project>{AAD6E2D2-903B-425E-B650-BAD1C336CE6A}</Project>
+      <Name>GraysSportAlmanac.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
