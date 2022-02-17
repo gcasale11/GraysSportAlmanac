@@ -22,8 +22,10 @@ namespace GraysSportAlmanac.Services
             var entity =
                 new FAQ()
                 {
-                    AuthorId = _userId,
-                    /*PostId = model.PostId,*/
+                    ProfileId = model.ProfileId,
+                    Question = model.Question,
+                    AuthorId = _userId
+
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -47,10 +49,9 @@ namespace GraysSportAlmanac.Services
                         new FAQListItem
                         {
                             FaqId = e.FaqId,
-                            /*PostId = e.PostId,
+                            ProfileId = e.ProfileId,
                             Question = e.Question,
-                            CommentId = e.CommentId,
-                            Response = e.Response*/
+                            
                         }
                      );
 
@@ -71,8 +72,8 @@ namespace GraysSportAlmanac.Services
                     {
                         FaqId = entity.FaqId,
                         AuthorId = entity.AuthorId,
-                       /* PostId = entity.PostId,
-                        CommentId = entity.CommentId*/
+                        Question = entity.Question,
+                        
                     };
             }
         }
@@ -87,12 +88,9 @@ namespace GraysSportAlmanac.Services
                     .Single(e => e.FaqId == model.FaqId && e.AuthorId == _userId);
 
                 entity.FaqId = model.FaqId;
-                /*entity.PostId = model.PostId;
                 entity.Question = model.Question;
-                entity.CommentId = model.CommentId;
-                entity.Response = model.Response;*/
-
-
+               
+             
                 return ctx.SaveChanges() == 1;
             }
         }

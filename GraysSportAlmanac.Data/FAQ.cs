@@ -13,20 +13,19 @@ namespace GraysSportAlmanac.Data
         [Key]
         public int FaqId { get; set; }
 
-        [Required]
         public Guid AuthorId { get; set; }
+
+       
         public string Question { get; set; }
-        
-     
 
-        [ForeignKey(nameof(Comment))]
-        public int CommentId { get; set; }
 
-        public virtual Comment  Comment { get; set; }
 
         [ForeignKey(nameof(Profile))]
         public int ProfileId { get; set; }
         public virtual Profile Profile { get; set; }
+
+
+        public virtual ICollection<Comment> CollectionComment { get; set; }
 
 
 
