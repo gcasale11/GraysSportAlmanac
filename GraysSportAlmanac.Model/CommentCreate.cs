@@ -19,7 +19,7 @@ namespace GraysSportAlmanac.Model
        
         public int PostId { get; set; }
 
-        public int FaqId { get; set; }
+        public int? FaqId { get; set; }
 
         public int GroupPostId { get; set; }
 

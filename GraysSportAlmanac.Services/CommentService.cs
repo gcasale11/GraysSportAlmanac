@@ -24,7 +24,7 @@ namespace GraysSportAlmanac.Services
                 {
                     AuthorId = _userId,
                     PostId = model.PostId,
-                    FaqId = model.FaqId,
+                    FaqId = model?.FaqId,
                     GroupPostId = model.GroupPostId,
                     ProfileId = model.ProfileId,
                     ContentComment = model.ContentComment,
@@ -56,7 +56,7 @@ namespace GraysSportAlmanac.Services
                             ProfileId = e.ProfileId,
                             UserName = e.Profile.UserName,
                             PostId = e.PostId,
-                            /*FaqId = e.FaqId,*/
+                            FaqId = e.FaqId,
                             CommentId = e.CommentId,
                             ContentComment = e.ContentComment,
                             
@@ -79,6 +79,10 @@ namespace GraysSportAlmanac.Services
                     new CommentDetail
                     {
                         CommentId = entity.CommentId,
+                        ContentComment = entity.ContentComment,
+                        PostId = entity.PostId,
+                        FaqId = entity.FaqId,
+                        GroupPostId = entity.GroupPostId,
                         AuthorId = entity.AuthorId,
                         
                     };
@@ -95,6 +99,7 @@ namespace GraysSportAlmanac.Services
                     .Single(e => e.CommentId ==
                     model.CommentId && e.AuthorId == _userId);
 
+                entity.CommentId = model.CommentId;
                 entity.ContentComment = model.ContentComment;
 
                 return ctx.SaveChanges() == 1;
