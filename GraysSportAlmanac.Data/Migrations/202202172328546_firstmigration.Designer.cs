@@ -7,13 +7,13 @@ namespace GraysSportAlmanac.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class Moore : IMigrationMetadata
+    public sealed partial class firstmigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Moore));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(firstmigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202202172314360_Moore"; }
+            get { return "202202172328546_firstmigration"; }
         }
         
         string IMigrationMetadata.Source

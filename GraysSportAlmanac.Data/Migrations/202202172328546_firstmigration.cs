@@ -3,7 +3,7 @@ namespace GraysSportAlmanac.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Moore : DbMigration
+    public partial class firstmigration : DbMigration
     {
         public override void Up()
         {

@@ -50,8 +50,7 @@ namespace GraysSportAlmanac.Services
                         e =>
                         new GroupPostListItem
                         {
-                            GroupPostId = e.GroupPostId,
-                            ProfileId = e.ProfileId,
+                            UserName = e.Profile.UserName,
                             BetDate = e.BetDate,
                             Risked = e.Risked,
                             Odds = e.Odds,

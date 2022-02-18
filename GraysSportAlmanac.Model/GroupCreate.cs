@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GraysSportAlmanac.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -16,11 +17,12 @@ namespace GraysSportAlmanac.Model
        
         public int ProfileId { get; set; }
 
+        [Required]
         public string GroupName { get; set; }
         //List of Users property
         public int RankingWL { get; set; }
         public int RankingTA { get; set; }
-        public string GroupPost { get; set; }
+        public List<GroupPost> ListofPosts { get; set; }
 
     }
 }

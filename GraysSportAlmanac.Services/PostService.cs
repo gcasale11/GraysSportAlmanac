@@ -24,6 +24,7 @@ namespace GraysSportAlmanac.Services
                 {
                     AuthorId = _postId,
                     ProfileId = model.ProfileId,
+                    UserName = model.UserName,
                     BetDate = model.BetDate,
                     Bet = model.Bet,
                     Risked = model.Risked,
@@ -51,7 +52,7 @@ namespace GraysSportAlmanac.Services
                         e =>
                         new PostListItem
                         {
-                            PostId = e.PostId,
+                            UserName = e.Profile.UserName,
                             BetDate = e.BetDate,
                             Bet = e.Bet,
                             Risked = e.Risked,
@@ -75,11 +76,6 @@ namespace GraysSportAlmanac.Services
                 return
                     new PostDetail
                     {
-                        PostId = entity.PostId,
-                        BetDate = entity.BetDate,
-                        Bet = entity.Bet,
-                        Risked = entity.Risked,
-                        Odds = entity.Odds,
                         Result = entity.Result,
                         Payout = entity.Payout
 
@@ -95,6 +91,8 @@ namespace GraysSportAlmanac.Services
                     ctx
                     .Posts
                     .Single(e => e.PostId == model.PostId);
+                entity.Result = model.Result;
+                entity.Payout = model.Payout;
 
                 return ctx.SaveChanges() == 1;
             }

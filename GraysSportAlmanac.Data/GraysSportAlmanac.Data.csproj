@@ -62,9 +62,9 @@
     <Compile Include="Group.cs" />
     <Compile Include="GroupPost.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202202172314360_Moore.cs" />
-    <Compile Include="Migrations\202202172314360_Moore.Designer.cs">
-      <DependentUpon>202202172314360_Moore.cs</DependentUpon>
+    <Compile Include="Migrations\202202172328546_firstmigration.cs" />
+    <Compile Include="Migrations\202202172328546_firstmigration.Designer.cs">
+      <DependentUpon>202202172328546_firstmigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
@@ -76,8 +76,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202202172314360_Moore.resx">
-      <DependentUpon>202202172314360_Moore.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202172328546_firstmigration.resx">
+      <DependentUpon>202202172328546_firstmigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
