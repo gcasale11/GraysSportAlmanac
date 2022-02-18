@@ -8,6 +8,7 @@ namespace GraysSportAlmanac.Model
 {
     public class PostEdit
     {
+        public int PostId { get; set; }
         public string Result { get; set; }
         public decimal Payout { get; set; }
     }
