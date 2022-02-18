@@ -9,6 +9,9 @@ namespace GraysSportAlmanac.Model
   public class PostListItem
     {
         public int PostId { get; set; }
+
+        public int ProfileId { get; set; }
+        public string UserName { get; set; }
         public string BetDate { get; set; }
         public string Bet { get; set; }
         public decimal Risked { get; set; }

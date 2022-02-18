@@ -11,18 +11,6 @@ namespace GraysSportAlmanac.Model
     {
         [Key]
         public int GroupPostId { get; set; }
-
-        /*
-            [ForeignKey(nameof(Group))]
-            public Group GroupId { get; set; }
-
-            [ForeignKey(nameof(Profile))]
-            public Profile ProfileId { get; set; }
-        */
-
-        public string BetDate { get; set; }
-        public decimal Risked { get; set; }
-        public int Odds { get; set; }
         public string Result { get; set; }
         public decimal Payout { get; set; }
     }

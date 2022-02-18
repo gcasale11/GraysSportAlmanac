@@ -16,15 +16,21 @@ namespace GraysSportAlmanac.Data
 
         [ForeignKey(nameof(Profile))]
         public int ProfileId { get; set; }
+        public string UserName { get; set; }
         public virtual Profile Profile { get; set; }
 
-        //property for User Name?
-
+        [Required]
         public string BetDate { get; set; }
+        [Required]
         public string Bet { get; set; }
+        [Required]
+
         public decimal Risked { get; set; }
+        [Required]
         public int Odds { get; set; }
         public string Result { get; set; }
+
+       
         public decimal Payout { get; set; }
 
         public virtual ICollection<Comment> CollectionComment { get; set; }
