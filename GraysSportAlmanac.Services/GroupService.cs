@@ -27,7 +27,7 @@ namespace GraysSportAlmanac.Services
                     GroupName = model.GroupName,
                     RankingWL = model.RankingWL,
                     RankingTA = model.RankingTA,
-                    GroupPost = model.GroupPost
+                    ListofPosts = model.ListofPosts
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -48,12 +48,10 @@ namespace GraysSportAlmanac.Services
                         e =>
                         new GroupListItem
                         {
-                            GroupID = e.GroupId,
-                              ProfileId = e.ProfileId,
                             GroupName = e.GroupName,
                             RankingWL = e.RankingWL,
                             RankingTA = e.RankingTA,
-                            GroupPost = e.GroupPost
+                            ListofPosts = e.ListofPosts
                         }
                         );
                 return query.ToArray();
