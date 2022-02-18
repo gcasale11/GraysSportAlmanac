@@ -24,16 +24,16 @@ namespace GraysSportAlmanac.Data
         [Required]
         public string Bet { get; set; }
         [Required]
-        [MinLength(3,ErrorMessage ="Please enter the amount wagered in 1.00 format")]
+        /*[MinLength(3,ErrorMessage ="Please enter the amount wagered in 1.00 format")]*/
         public decimal Risked { get; set; }
         [Required]
-        [MinLength(4, ErrorMessage ="Please enter the odds on the wager in the American style (+100, -100)")]
+        /*[MinLength(4, ErrorMessage ="Please enter the odds on the wager in the American style (+100, -100)")]*/
         public int Odds { get; set; }
        
-        [MaxLength(1,ErrorMessage ="Please enter W for a win, L for a loss, and P for a push")]
+        /*[MaxLength(1,ErrorMessage ="Please enter W for a win, L for a loss, and P for a push")]*/
         public string Result { get; set; }
        
-        [MinLength(3,ErrorMessage ="Please enter the amount won or lost in 1.00 format")]
+        /*[MinLength(3,ErrorMessage ="Please enter the amount won or lost in 1.00 format")]*/
         public decimal Payout { get; set; }
 
         public virtual ICollection<Comment> CollectionComment { get; set; }
