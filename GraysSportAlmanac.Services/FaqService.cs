@@ -22,8 +22,8 @@ namespace GraysSportAlmanac.Services
             var entity =
                 new FAQ()
                 {
-                    ProfileId = model.ProfileId,
                     Question = model.Question,
+                    ProfileId = model.ProfileId,
                     AuthorId = _userId
 
                 };
@@ -49,8 +49,9 @@ namespace GraysSportAlmanac.Services
                         new FAQListItem
                         {
                             FaqId = e.FaqId,
-                            ProfileId = e.ProfileId,
                             Question = e.Question,
+                            UserName = e.Profile.UserName,
+                            ProfileId = e.ProfileId,
                             
                         }
                      );
@@ -73,7 +74,7 @@ namespace GraysSportAlmanac.Services
                         FaqId = entity.FaqId,
                         AuthorId = entity.AuthorId,
                         Question = entity.Question,
-                        
+                        UserName = entity.Profile.UserName,
                     };
             }
         }

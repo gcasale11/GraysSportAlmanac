@@ -28,6 +28,7 @@ namespace GraysSportAlmanac.Data
         public string Result { get; set; }
         public decimal Payout { get; set; }
 
+        public virtual ICollection<Comment> CollectionComment { get; set; }
 
     }
 }
