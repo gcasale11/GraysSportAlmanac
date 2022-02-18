@@ -23,10 +23,12 @@ namespace GraysSportAlmanac.Services
                 new Comment()
                 {
                     AuthorId = _userId,
-                    ContentComment = model.ContentComment,
                     PostId = model.PostId,
+                    FaqId = model.FaqId,
+                    GroupPostId = model.GroupPostId,
                     ProfileId = model.ProfileId,
-                    UserName = model.UserName
+                    ContentComment = model.ContentComment,
+                    
                     
                 };
 
@@ -36,6 +38,8 @@ namespace GraysSportAlmanac.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+
 
         public IEnumerable<CommentListItem> GetComment()
         {
@@ -50,8 +54,9 @@ namespace GraysSportAlmanac.Services
                         new CommentListItem
                         {
                             ProfileId = e.ProfileId,
-                            UserName = e.UserName,
+                            UserName = e.Profile.UserName,
                             PostId = e.PostId,
+                            /*FaqId = e.FaqId,*/
                             CommentId = e.CommentId,
                             ContentComment = e.ContentComment,
                             
