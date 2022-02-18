@@ -24,10 +24,13 @@ namespace GraysSportAlmanac.Data
         [Required]
         public string Bet { get; set; }
         [Required]
+
         public decimal Risked { get; set; }
         [Required]
         public int Odds { get; set; }
         public string Result { get; set; }
+
+       
         public decimal Payout { get; set; }
 
         public virtual ICollection<Comment> CollectionComment { get; set; }

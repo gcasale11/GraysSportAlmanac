@@ -52,6 +52,7 @@ namespace GraysSportAlmanac.Services
                         e =>
                         new PostListItem
                         {
+                            ProfileId = e.ProfileId,
                             UserName = e.Profile.UserName,
                             BetDate = e.BetDate,
                             Bet = e.Bet,

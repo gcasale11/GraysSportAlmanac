@@ -3,7 +3,7 @@ namespace GraysSportAlmanac.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class firstmigration : DbMigration
+    public partial class Moore : DbMigration
     {
         public override void Up()
         {
@@ -70,12 +70,18 @@ namespace GraysSportAlmanac.Data.Migrations
                         Odds = c.Int(nullable: false),
                         Result = c.String(),
                         Payout = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Group_GroupId = c.Int(),
+                        Group_GroupId1 = c.Int(),
                     })
                 .PrimaryKey(t => t.GroupPostId)
+                .ForeignKey("dbo.Group", t => t.Group_GroupId)
+                .ForeignKey("dbo.Group", t => t.Group_GroupId1)
                 .ForeignKey("dbo.Group", t => t.GroupId, cascadeDelete: false)
                 .ForeignKey("dbo.Profile", t => t.ProfileId, cascadeDelete: false)
                 .Index(t => t.GroupId)
-                .Index(t => t.ProfileId);
+                .Index(t => t.ProfileId)
+                .Index(t => t.Group_GroupId)
+                .Index(t => t.Group_GroupId1);
             
             CreateTable(
                 "dbo.Group",
@@ -87,7 +93,6 @@ namespace GraysSportAlmanac.Data.Migrations
                         GroupName = c.String(),
                         RankingWL = c.Int(nullable: false),
                         RankingTA = c.Int(nullable: false),
-                        GroupPost = c.String(),
                     })
                 .PrimaryKey(t => t.GroupId)
                 .ForeignKey("dbo.Profile", t => t.ProfileId, cascadeDelete: false)
@@ -100,8 +105,9 @@ namespace GraysSportAlmanac.Data.Migrations
                         PostId = c.Int(nullable: false, identity: true),
                         AuthorId = c.Guid(nullable: false),
                         ProfileId = c.Int(nullable: false),
-                        BetDate = c.String(),
-                        Bet = c.String(),
+                        UserName = c.String(),
+                        BetDate = c.String(nullable: false),
+                        Bet = c.String(nullable: false),
                         Risked = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Odds = c.Int(nullable: false),
                         Result = c.String(),
@@ -197,12 +203,16 @@ namespace GraysSportAlmanac.Data.Migrations
             DropForeignKey("dbo.GroupPost", "ProfileId", "dbo.Profile");
             DropForeignKey("dbo.GroupPost", "GroupId", "dbo.Group");
             DropForeignKey("dbo.Group", "ProfileId", "dbo.Profile");
+            DropForeignKey("dbo.GroupPost", "Group_GroupId1", "dbo.Group");
+            DropForeignKey("dbo.GroupPost", "Group_GroupId", "dbo.Group");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
             DropIndex("dbo.Post", new[] { "ProfileId" });
             DropIndex("dbo.Group", new[] { "ProfileId" });
+            DropIndex("dbo.GroupPost", new[] { "Group_GroupId1" });
+            DropIndex("dbo.GroupPost", new[] { "Group_GroupId" });
             DropIndex("dbo.GroupPost", new[] { "ProfileId" });
             DropIndex("dbo.GroupPost", new[] { "GroupId" });
             DropIndex("dbo.FAQ", new[] { "ProfileId" });

@@ -22,6 +22,9 @@ namespace GraysSportAlmanac.Model
 
         [Required]
         public int Odds { get; set; }
+
+        public string Result { get; set; }
+      
         public string Result { get; set; }
 
         public decimal Payout { get; set; }
