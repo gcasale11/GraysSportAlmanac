@@ -23,10 +23,12 @@ namespace GraysSportAlmanac.Services
                 new Comment()
                 {
                     AuthorId = _userId,
-                    ContentComment = model.ContentComment,
                     PostId = model.PostId,
+                    FaqId = model?.FaqId,
+                    GroupPostId = model.GroupPostId,
                     ProfileId = model.ProfileId,
-                    UserName = model.UserName
+                    ContentComment = model.ContentComment,
+                    
                     
                 };
 
@@ -36,6 +38,8 @@ namespace GraysSportAlmanac.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+
 
         public IEnumerable<CommentListItem> GetComment()
         {
@@ -50,8 +54,9 @@ namespace GraysSportAlmanac.Services
                         new CommentListItem
                         {
                             ProfileId = e.ProfileId,
-                            UserName = e.UserName,
+                            UserName = e.Profile.UserName,
                             PostId = e.PostId,
+                            FaqId = e.FaqId,
                             CommentId = e.CommentId,
                             ContentComment = e.ContentComment,
                             
@@ -74,6 +79,10 @@ namespace GraysSportAlmanac.Services
                     new CommentDetail
                     {
                         CommentId = entity.CommentId,
+                        ContentComment = entity.ContentComment,
+                        PostId = entity.PostId,
+                        FaqId = entity.FaqId,
+                        GroupPostId = entity.GroupPostId,
                         AuthorId = entity.AuthorId,
                         
                     };
@@ -90,6 +99,7 @@ namespace GraysSportAlmanac.Services
                     .Single(e => e.CommentId ==
                     model.CommentId && e.AuthorId == _userId);
 
+                entity.CommentId = model.CommentId;
                 entity.ContentComment = model.ContentComment;
 
                 return ctx.SaveChanges() == 1;
