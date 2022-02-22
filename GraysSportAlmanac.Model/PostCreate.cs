@@ -25,7 +25,6 @@ namespace GraysSportAlmanac.Model
 
         public string Result { get; set; }
       
-        public string Result { get; set; }
 
         public decimal Payout { get; set; }
     }

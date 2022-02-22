@@ -10,7 +10,7 @@ using System.Web.Http;
 
 namespace GraysSportAlmanac.WebAPI.Controllers
 {
-    [Authorize]
+    
     [RoutePrefix("api/profile")]
     public class ProfileController : ApiController
     {
@@ -21,6 +21,7 @@ namespace GraysSportAlmanac.WebAPI.Controllers
             return Ok(profiles);
         }
 
+        [Authorize]
         public IHttpActionResult Post(ProfileCreate profile)
         {
             if (!ModelState.IsValid)
@@ -34,6 +35,7 @@ namespace GraysSportAlmanac.WebAPI.Controllers
             return Ok();
         }
 
+        [Authorize]
         private ProfileService CreateProfileService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -48,6 +50,7 @@ namespace GraysSportAlmanac.WebAPI.Controllers
             return Ok(profile);
         }
 
+        [Authorize]
         public IHttpActionResult Put(ProfileEdit profile)
         {
             if (!ModelState.IsValid)
@@ -61,6 +64,7 @@ namespace GraysSportAlmanac.WebAPI.Controllers
             return Ok();
         }
 
+        [Authorize]
         public IHttpActionResult Delete(int id)
         {
             var service = CreateProfileService();

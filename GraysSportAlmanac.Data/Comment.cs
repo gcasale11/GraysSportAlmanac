@@ -13,7 +13,7 @@ namespace GraysSportAlmanac.Data
         [Key]
         public int CommentId { get; set; }
 
-        [Required]
+        
         public Guid AuthorId { get; set; }
 
         public string UserName { get; set; }
@@ -40,7 +40,6 @@ namespace GraysSportAlmanac.Data
 
         [ForeignKey(nameof(GroupPost))]
         public int GroupPostId { get; set; }
-
         public virtual GroupPost GroupPost { get; set; }
 
 
