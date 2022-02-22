@@ -14,6 +14,8 @@ namespace GraysSportAlmanac.Data
         public int GroupPostId { get; set; }
         public Guid AuthorId { get; set; }
 
+        
+
         [ForeignKey(nameof(Group))]
         public int GroupId { get; set; }
         public virtual Group Group { get; set; }
@@ -29,6 +31,7 @@ namespace GraysSportAlmanac.Data
         public decimal Payout { get; set; }
 
         public virtual ICollection<Comment> CollectionComment { get; set; }
+        
 
     }
 }

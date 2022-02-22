@@ -10,7 +10,7 @@ using System.Web.Http;
 
 namespace GraysSportAlmanac.WebAPI.Controllers
 {
-        [Authorize]
+        
         [RoutePrefix("api/faq")]
     public class FAQController : ApiController
     {
@@ -21,7 +21,9 @@ namespace GraysSportAlmanac.WebAPI.Controllers
                 var catments = faqService.GetFAQGet();
                 return Ok(catments);
             }
-            public IHttpActionResult Post(FAQCreate faq)
+
+        [Authorize]
+        public IHttpActionResult Post(FAQCreate faq)
             {
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
@@ -34,7 +36,8 @@ namespace GraysSportAlmanac.WebAPI.Controllers
                 return Ok();
             }
 
-            private FaqService CreateFaqService()
+        [Authorize]
+        private FaqService CreateFaqService()
             {
                 var userId = Guid.Parse(User.Identity.GetUserId());
                 var catmentService = new FaqService(userId);
@@ -48,7 +51,8 @@ namespace GraysSportAlmanac.WebAPI.Controllers
                 return Ok(faq);
             }
 
-            public IHttpActionResult Put(FAQEdit faq)
+        [Authorize]
+        public IHttpActionResult Put(FAQEdit faq)
             {
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
@@ -61,7 +65,8 @@ namespace GraysSportAlmanac.WebAPI.Controllers
                 return Ok();
             }
 
-            public IHttpActionResult Delete(int id)
+        [Authorize]
+        public IHttpActionResult Delete(int id)
             {
                 var service = CreateFaqService();
 

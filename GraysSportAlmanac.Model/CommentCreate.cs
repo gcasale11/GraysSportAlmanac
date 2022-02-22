@@ -13,10 +13,9 @@ namespace GraysSportAlmanac.Model
         [Required]
         public string ContentComment { get; set; }
 
+
         public int ProfileId { get; set; }
       
-        
-       
         public int PostId { get; set; }
 
         public int? FaqId { get; set; }

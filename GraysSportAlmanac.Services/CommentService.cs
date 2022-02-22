@@ -23,13 +23,12 @@ namespace GraysSportAlmanac.Services
                 new Comment()
                 {
                     AuthorId = _userId,
-                    PostId = model.PostId,
-                    FaqId = model?.FaqId,
-                    GroupPostId = model.GroupPostId,
-                    ProfileId = model.ProfileId,
                     ContentComment = model.ContentComment,
-                    
-                    
+                    ProfileId = model.ProfileId,
+                    PostId = model.PostId,
+                    GroupPostId = model.GroupPostId,
+                    FaqId = model?.FaqId,
+   
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -57,6 +56,7 @@ namespace GraysSportAlmanac.Services
                             UserName = e.Profile.UserName,
                             PostId = e.PostId,
                             FaqId = e.FaqId,
+                            GroupPostId = e.GroupPostId,
                             CommentId = e.CommentId,
                             ContentComment = e.ContentComment,
                             

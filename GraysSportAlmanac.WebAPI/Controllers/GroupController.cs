@@ -10,7 +10,7 @@ using System.Web.Http;
 
 namespace GraysSportAlmanac.WebAPI.Controllers
 {
-    [Authorize]
+   
     [RoutePrefix("api/Group")]
     public class GroupController : ApiController
     {
@@ -21,6 +21,7 @@ namespace GraysSportAlmanac.WebAPI.Controllers
             return Ok(groups);
         }
 
+        [Authorize]
         public IHttpActionResult Post(GroupCreate group)
         {
             if (!ModelState.IsValid)
@@ -34,6 +35,7 @@ namespace GraysSportAlmanac.WebAPI.Controllers
             return Ok();
         }
 
+        [Authorize]
         private GroupService CreateGroupService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -48,6 +50,7 @@ namespace GraysSportAlmanac.WebAPI.Controllers
             return Ok(group);
         }
 
+        [Authorize]
         public IHttpActionResult Put(GroupEdit group)
         {
             if (!ModelState.IsValid)
@@ -61,6 +64,7 @@ namespace GraysSportAlmanac.WebAPI.Controllers
             return Ok();
         }
 
+        [Authorize]
         public IHttpActionResult Delete(Guid id)
         {
             var service = CreateGroupService();

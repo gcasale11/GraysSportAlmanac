@@ -10,7 +10,7 @@ using System.Web.Http;
 
 namespace GraysSportAlmanac.WebAPI.Controllers
 {
-    [Authorize]
+    
     [RoutePrefix("api/post")]
     public class PostController : ApiController
     {
@@ -21,6 +21,7 @@ namespace GraysSportAlmanac.WebAPI.Controllers
             return Ok(Posts);
         }
 
+        [Authorize]
         public IHttpActionResult Post(PostCreate post)
         {
             if (!ModelState.IsValid)
@@ -34,6 +35,7 @@ namespace GraysSportAlmanac.WebAPI.Controllers
             return Ok();
         }
 
+        [Authorize]
         private PostService CreatePostService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -48,6 +50,7 @@ namespace GraysSportAlmanac.WebAPI.Controllers
             return Ok(post);
         }
 
+        [Authorize]
         public IHttpActionResult Put(PostEdit post)
         {
             if (!ModelState.IsValid)

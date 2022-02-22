@@ -14,6 +14,7 @@ namespace GraysSportAlmanac.Data
         public int GroupId { get; set; }
         public Guid AuthorId { get; set; }
 
+        [ForeignKey (nameof(Profile))]
         public int ProfileId { get; set; }
         public virtual Profile Profile { get; set; }
 
@@ -22,9 +23,9 @@ namespace GraysSportAlmanac.Data
        // public List<Group> ListofMembers { get; set; }
         public int RankingWL { get; set; }
         public int RankingTA { get; set; }
-        public List<GroupPost> ListofPosts { get; set; }
-
+        
 
         public virtual ICollection<GroupPost> CollectionGroupPost { get; set; }
+      
     }
 }

@@ -75,6 +75,7 @@ namespace GraysSportAlmanac.Services
                         AuthorId = entity.AuthorId,
                         Question = entity.Question,
                         UserName = entity.Profile.UserName,
+                        ProfileId = entity.ProfileId,
                     };
             }
         }
