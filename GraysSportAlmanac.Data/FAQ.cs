@@ -25,7 +25,7 @@ namespace GraysSportAlmanac.Data
         public virtual Profile Profile { get; set; }
 
 
-        public virtual ICollection<Comment> CollectionComment { get; set; }
+        public virtual ICollection<Answer> CollectionAnswer { get; set; }
 
 
 
