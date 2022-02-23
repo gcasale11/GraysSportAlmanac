@@ -60,9 +60,11 @@
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="FAQ.cs" />
-    <Compile Include="Group.cs" />
-    <Compile Include="GroupPost.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202202230030240_MayThisWork.cs" />
+    <Compile Include="Migrations\202202230030240_MayThisWork.Designer.cs">
+      <DependentUpon>202202230030240_MayThisWork.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Profile.cs" />
@@ -71,6 +73,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202202230030240_MayThisWork.resx">
+      <DependentUpon>202202230030240_MayThisWork.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

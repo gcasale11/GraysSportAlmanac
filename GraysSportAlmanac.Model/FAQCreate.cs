@@ -12,7 +12,10 @@ namespace GraysSportAlmanac.Model
         public string Question { get; set; }
         public int ProfileId { get; set; }
 
-        
+        public int CommentId { get; set; }
+        public string ContentComment { get; set; }
+
+
 
     }
 }

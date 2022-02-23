@@ -56,8 +56,6 @@
   <ItemGroup>
     <Compile Include="CommentService.cs" />
     <Compile Include="FaqService.cs" />
-    <Compile Include="GroupPostService.cs" />
-    <Compile Include="GroupService.cs" />
     <Compile Include="PostService.cs" />
     <Compile Include="ProfileService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -26,7 +26,7 @@ namespace GraysSportAlmanac.Services
                     ContentComment = model.ContentComment,
                     ProfileId = model.ProfileId,
                     PostId = model.PostId,
-                    GroupPostId = model.GroupPostId,
+                   /* GroupPostId = model.GroupPostId,*/
                     FaqId = model?.FaqId,
    
                 };
@@ -56,7 +56,7 @@ namespace GraysSportAlmanac.Services
                             UserName = e.Profile.UserName,
                             PostId = e.PostId,
                             FaqId = e.FaqId,
-                            GroupPostId = e.GroupPostId,
+                            /*GroupPostId = e.GroupPostId,*/
                             CommentId = e.CommentId,
                             ContentComment = e.ContentComment,
                             
@@ -82,7 +82,7 @@ namespace GraysSportAlmanac.Services
                         ContentComment = entity.ContentComment,
                         PostId = entity.PostId,
                         FaqId = entity.FaqId,
-                        GroupPostId = entity.GroupPostId,
+                       /* GroupPostId = entity.GroupPostId,*/
                         AuthorId = entity.AuthorId,
                         
                     };

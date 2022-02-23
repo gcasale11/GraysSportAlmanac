@@ -52,12 +52,6 @@
     <Compile Include="FAQListItem.cs" />
     <Compile Include="GroupCreate.cs" />
     <Compile Include="GroupDetail.cs" />
-    <Compile Include="GroupEdit.cs" />
-    <Compile Include="GroupListItem.cs" />
-    <Compile Include="GroupPostCreate.cs" />
-    <Compile Include="GroupPostDetail.cs" />
-    <Compile Include="GroupPostEdit.cs" />
-    <Compile Include="GroupPostListItem.cs" />
     <Compile Include="PostCreate.cs" />
     <Compile Include="PostDetail.cs" />
     <Compile Include="PostEdit.cs" />

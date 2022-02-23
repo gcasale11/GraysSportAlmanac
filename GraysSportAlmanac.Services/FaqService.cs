@@ -50,8 +50,8 @@ namespace GraysSportAlmanac.Services
                         {
                             FaqId = e.FaqId,
                             Question = e.Question,
-                            UserName = e.Profile.UserName,
                             ProfileId = e.ProfileId,
+                            UserName = e.Profile.UserName,
                             
                         }
                      );

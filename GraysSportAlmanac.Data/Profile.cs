@@ -29,7 +29,7 @@ namespace GraysSportAlmanac.Data
         public int Units { get; set; }
 
         public virtual ICollection<Post> CollectionPost { get; set; }
-        public virtual ICollection<GroupPost> CollectionGroupPost { get; set; }
+        /*public virtual ICollection<GroupPost> CollectionGroupPost { get; set; }*/
 
         public virtual ICollection<Comment> CollectionComment{ get; set; }
 
