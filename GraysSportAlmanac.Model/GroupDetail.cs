@@ -15,7 +15,7 @@ namespace GraysSportAlmanac.Model
         public int GroupId { get; set; }
 
      
-        public Profile ProfileId { get; set; }
+      //  public Profile ProfileId { get; set; }
 
         public string GroupName { get; set; }
         //List of Users Property

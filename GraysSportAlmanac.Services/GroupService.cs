@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GraysSportAlmanac.Services
-{
+{/*
     public class GroupService
     {
         private readonly Guid _groupId;
@@ -99,4 +99,4 @@ namespace GraysSportAlmanac.Services
             }
         }
     }
-}
+*/}

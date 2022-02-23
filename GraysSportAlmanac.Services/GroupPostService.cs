@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GraysSportAlmanac.Services
 {
-    public class GroupPostService
+   /* public class GroupPostService
     {
         private readonly Guid _groupPostId;
 
@@ -105,4 +105,4 @@ namespace GraysSportAlmanac.Services
 
 
     }
-}
+*/}

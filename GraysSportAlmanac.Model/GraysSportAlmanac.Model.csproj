@@ -42,6 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnswerCreate.cs" />
+    <Compile Include="AnswerDetail.cs" />
+    <Compile Include="AnswerEdit.cs" />
+    <Compile Include="AnswerListItem.cs" />
     <Compile Include="CommentCreate.cs" />
     <Compile Include="CommentDetail.cs" />
     <Compile Include="CommentEdit.cs" />

@@ -13,7 +13,7 @@ namespace GraysSportAlmanac.Model
         public int GroupPostId { get; set; }
 
         
-        public int GroupId { get; set; }
+       // public int GroupId { get; set; }
 
         public string Result { get; set; }
         public decimal Payout { get; set; }

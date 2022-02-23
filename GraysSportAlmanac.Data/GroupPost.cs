@@ -15,7 +15,7 @@ namespace GraysSportAlmanac.Data
         public Guid AuthorId { get; set; }
 
         
-
+        /*
         [ForeignKey(nameof(Group))]
         public int GroupId { get; set; }
         public virtual Group Group { get; set; }
@@ -23,6 +23,7 @@ namespace GraysSportAlmanac.Data
         [ForeignKey(nameof(Profile))]
         public int ProfileId { get; set; }
         public virtual Profile Profile { get; set; }
+        */
 
         public string BetDate { get; set; }
         public decimal Risked { get; set; }

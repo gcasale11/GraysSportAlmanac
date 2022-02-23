@@ -9,7 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 
 namespace GraysSportAlmanac.WebAPI.Controllers
-{
+{/*
     
     [RoutePrefix("api/GroupPost")]
     public class GroupPostController : ApiController
@@ -74,4 +74,4 @@ namespace GraysSportAlmanac.WebAPI.Controllers
             return Ok();
         }
     }
-}
+*/}

@@ -15,7 +15,7 @@ namespace GraysSportAlmanac.Model
         public Guid GroupPostId { get; set; }*/
 
 
-        public int GroupId { get; set; }
+       // public int GroupId { get; set; }
 
 
         public int ProfileId { get; set; }
