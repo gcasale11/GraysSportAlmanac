@@ -22,7 +22,6 @@ namespace GraysSportAlmanac.Model
         //List of Users property
         public int RankingWL { get; set; }
         public int RankingTA { get; set; }
-        public List<GroupPost> ListofPosts { get; set; }
 
     }
 }
