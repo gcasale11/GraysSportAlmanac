@@ -9,30 +9,29 @@ namespace GraysSportAlmanac.Model
 {
     public class ProfileDetail
     {
-        [Display(Name = "Profile ID")]
         public int ProfileId { get; set; }
         public Guid OwnerId { get; set; }
         
-        [Display(Name = "UserName")]
+        [Display(Name = "User Name")]
         public string UserName { get; set; }
 
         [Display(Name = "Bio")]
         public string Bio { get; set; }
 
 
-        [Display(Name = "Record")]
+        [Display(Name = "Record W-L-P")]
         public string Record { get; set; }
 
-        [Display(Name = "Total Risked")]
+        [Display(Name = "Total Amount Risked")]
         public decimal TotalRisked { get; set; }
 
-        [Display(Name = "Total Account")]
+        [Display(Name = "Account Total")]
         public decimal TotalAccount { get; set; }
 
-        [Display(Name = "Unit Size")]
+        [Display(Name = "Preferred Unit Size")]
         public decimal UnitSize { get; set; }
 
-        [Display(Name = "Units")]
+        [Display(Name = "Total Units Up/Down")]
         public int Units { get; set; }
 
     }

@@ -10,18 +10,26 @@ namespace GraysSportAlmanac.Model
     public class ProfileCreate
     {
         [Required]
+        [Display(Name = "User Name")]
         public string UserName { get; set; }
 
         [Required]
+        [Display(Name = "Bio")]
         public string Bio { get; set; }
 
+        [Display(Name = "Record W-L-P")]
         public string Record { get; set; }
 
+        [Display(Name = "Total Amout Risked")]
         public decimal TotalRisked { get; set; }
 
+        [Display(Name = "Account Total")]
         public decimal TotalAccount { get; set; }
+
+        [Display(Name = "Preferred Unit Size")]
         public decimal UnitSize { get; set; }
 
+        [Display(Name = "Total Units Up/Down")]
         public int Units { get; set; }
 
     }

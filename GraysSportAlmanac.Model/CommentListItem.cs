@@ -11,10 +11,12 @@ namespace GraysSportAlmanac.Model
     {
         public int CommentId { get; set; }
 
+        [Display(Name = "Comment")]
         public string ContentComment { get; set; }
 
         public int ProfileId { get; set; }
 
+        [Display(Name = "User Name")]
         public string UserName { get; set; }
 
 

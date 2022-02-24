@@ -11,6 +11,7 @@ namespace GraysSportAlmanac.Model
     {
         
         [Required]
+        [Display(Name = "Comment")]
         public string ContentComment { get; set; }
 
 

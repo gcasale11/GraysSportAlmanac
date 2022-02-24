@@ -10,6 +10,8 @@ namespace GraysSportAlmanac.Model
     public class CommentDetail
     {
         public int CommentId { get; set; }
+
+        [Display(Name = "Comment")]
         public string ContentComment { get; set; }
 
         public int PostId { get; set; }

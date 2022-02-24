@@ -9,6 +9,8 @@ namespace GraysSportAlmanac.Model
 {
     public class FAQCreate
     {
+        [Required]
+        [Display(Name = "Question")]
         public string Question { get; set; }
         public int ProfileId { get; set; }
 
