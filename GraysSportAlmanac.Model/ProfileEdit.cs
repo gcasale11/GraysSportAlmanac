@@ -11,6 +11,13 @@ namespace GraysSportAlmanac.Model
     {
         
         public int ProfileId { get; set; }
+
+        [Display(Name = "UserName")]
+        public string UserName { get; set; }
+
+        [Display(Name = "Bio")]
+        public string Bio { get; set; }
+
         public string Record { get; set; }
 
         public decimal TotalRisked { get; set; }

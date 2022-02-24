@@ -10,72 +10,67 @@ using System.Web.Http;
 
 namespace GraysSportAlmanac.WebAPI.Controllers
 {
-    
-    [RoutePrefix("api/post")]
-    public class PostController : ApiController
+    [RoutePrefix("api/answer")]
+    public class AnswerController : ApiController
     {
         public IHttpActionResult Get()
         {
-            PostService postService = CreatePostService();
-            var Posts = postService.GetPost();
-            return Ok(Posts);
+            AnswerService answserService = CreateAnswerService();
+            var answers = answserService.GetAnswer();
+            return Ok(answers);
         }
 
         [Authorize]
-        public IHttpActionResult Post(PostCreate post)
+        public IHttpActionResult Post(AnswerCreate answer)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = CreatePostService();
+            var service = CreateAnswerService();
 
-            if (!service.CreatePost(post))
+            if (!service.CreateAnswer(answer))
                 return InternalServerError();
 
             return Ok();
         }
 
-        [Authorize]
-        private PostService CreatePostService()
+        private AnswerService CreateAnswerService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var postService = new PostService(userId);
-            return postService;
+            var answerService = new AnswerService(userId);
+            return answerService;
         }
 
         public IHttpActionResult Get(int id)
         {
-            PostService postService = CreatePostService();
-            var post = postService.GetPostByID(id);
-            return Ok(post);
+            AnswerService answerService = CreateAnswerService();
+            var answer = answerService.GetAnswerByID(id);
+            return Ok(answer);
         }
 
         [Authorize]
-        public IHttpActionResult Put(PostEdit post)
+        public IHttpActionResult Put(AnswerEdit answer)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = CreatePostService();
+            var service = CreateAnswerService();
 
-            if (!service.UpdatePost(post))
+            if (!service.UpdateAnswer(answer))
                 return InternalServerError();
 
             return Ok();
-
         }
-            [Authorize]
 
+        [Authorize]
         public IHttpActionResult Delete(int id)
-            {
-                var service = CreatePostService();
+        {
+            var service = CreateAnswerService();
 
-            if (!service.DeletePost(id))
+            if (!service.DeleteAnswer(id))
                 return InternalServerError();
 
             return Ok();
-
-            }
-
+        }
     }
 }

@@ -42,10 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnswerCreate.cs" />
+    <Compile Include="AnswerDetail.cs" />
+    <Compile Include="AnswerEdit.cs" />
+    <Compile Include="AnswerListItem.cs" />
     <Compile Include="CommentCreate.cs" />
     <Compile Include="CommentDetail.cs" />
     <Compile Include="CommentEdit.cs" />
     <Compile Include="CommentListItem.cs" />
+    <Compile Include="FAQCreate.cs" />
+    <Compile Include="FAQDetail.cs" />
+    <Compile Include="FAQEdit.cs" />
+    <Compile Include="FAQListItem.cs" />
     <Compile Include="GroupCreate.cs" />
     <Compile Include="GroupDetail.cs" />
     <Compile Include="GroupEdit.cs" />
@@ -63,6 +71,12 @@
     <Compile Include="ProfileEdit.cs" />
     <Compile Include="ProfileListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GraysSportAlmanac.Data\GraysSportAlmanac.Data.csproj">
+      <Project>{AAD6E2D2-903B-425E-B650-BAD1C336CE6A}</Project>
+      <Name>GraysSportAlmanac.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

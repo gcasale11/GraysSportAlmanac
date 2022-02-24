@@ -13,12 +13,22 @@ namespace GraysSportAlmanac.Model
 
         public string ContentComment { get; set; }
 
+        public int ProfileId { get; set; }
+
+        public string UserName { get; set; }
+
+
+        public int PostId { get; set; }
+
+
+        public int? FaqId { get; set; }
+
+      //  public int GroupPostId { get; set; }
+
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
 
-        //public int PostId {get; set;}
-        //public string Title {get; set;}
-        //public string Content {get; set;}
+       
 
     }
 }

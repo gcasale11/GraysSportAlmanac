@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace GraysSportAlmanac.Services
 {
-    public class GroupPostService
+   /* public class GroupPostService
     {
         private readonly Guid _groupPostId;
 
         public GroupPostService(Guid groupPostId)
         {
-            groupPostId = _groupPostId;
+            _groupPostId = groupPostId;
         }
 
         public bool CreateGroupPost(GroupPostCreate model)
@@ -22,8 +22,9 @@ namespace GraysSportAlmanac.Services
             var entity =
                 new GroupPost()
                 {
-                    GroupPostId = model.GroupPostId,
-                    //ProfileId and GroupId I think need to go here
+                    AuthorId = _groupPostId,
+                    GroupId = model.GroupId,
+                    ProfileId = model.ProfileId,
                     BetDate = model.BetDate,
                     Risked = model.Risked,
                     Odds = model.Odds,
@@ -44,12 +45,17 @@ namespace GraysSportAlmanac.Services
                 var query =
                     ctx
                     .GroupPosts
-                    .Where(e => e.GroupPostId == _groupPostId)
+                    .Where(e => e.AuthorId == _groupPostId)
                     .Select(
                         e =>
                         new GroupPostListItem
                         {
-                            GroupPostId = e.GroupPostId
+                            UserName = e.Profile.UserName,
+                            BetDate = e.BetDate,
+                            Risked = e.Risked,
+                            Odds = e.Odds,
+                            Result = e.Result,
+                            Payout = e.Payout,
                         }
                         );
                 return query.ToArray();
@@ -63,7 +69,7 @@ namespace GraysSportAlmanac.Services
                 var entity =
                     ctx
                     .GroupPosts
-                    .Single(e => e.GroupPostId == id && e.GroupPostId == _groupPostId);
+                    .Single(e => e.AuthorId == id && e.AuthorId == _groupPostId);
                 return
                     new GroupPostDetail
                     {
@@ -91,7 +97,7 @@ namespace GraysSportAlmanac.Services
                 var entity =
                     ctx
                     .GroupPosts
-                    .Single(e => e.GroupPostId == groupPostId);
+                    .Single(e => e.AuthorId == groupPostId);
                 ctx.GroupPosts.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
@@ -99,4 +105,4 @@ namespace GraysSportAlmanac.Services
 
 
     }
-}
+*/}

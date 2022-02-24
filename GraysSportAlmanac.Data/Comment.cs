@@ -13,7 +13,7 @@ namespace GraysSportAlmanac.Data
         [Key]
         public int CommentId { get; set; }
 
-        [Required]
+        
         public Guid AuthorId { get; set; }
 
         public string UserName { get; set; }
@@ -24,9 +24,26 @@ namespace GraysSportAlmanac.Data
         [Required]
         public DateTimeOffset CreateUtc { get; set; }
 
-        /*[ForeignKey(nameof(PostId)]
+
+        [ForeignKey(nameof(Profile))]
+        public int ProfileId { get; set; }
+        public virtual Profile Profile { get; set; }
+
+        [ForeignKey(nameof(Post))]
         public int PostId { get; set; }
 
-        public virtual Post Post { get; set; }*/
+        public virtual Post Post { get; set; }
+
+        [ForeignKey(nameof(FAQ))]
+        public int? FaqId { get; set; }
+        public virtual FAQ FAQ { get; set; }
+/*
+        [ForeignKey(nameof(GroupPost))]
+        public int GroupPostId { get; set; }
+        public virtual GroupPost GroupPost { get; set; }
+*/
+
+
+
     }
 }

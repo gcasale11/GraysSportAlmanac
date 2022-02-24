@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace GraysSportAlmanac.Model
 {
-    public class PostEdit
+   public class AnswerDetail
     {
-        public int PostId { get; set; }
-        public string Result { get; set; }
-        public decimal Payout { get; set; }
+        public int AnswerID { get; set; }
+        public string AnswerContent { get; set; }
     }
 }

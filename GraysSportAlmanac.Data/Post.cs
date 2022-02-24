@@ -11,18 +11,28 @@ namespace GraysSportAlmanac.Data
     public class Post
     {
         [Key]
-        public Guid PostId { get; set; }
+        public int PostId { get; set; }
+        public Guid AuthorId { get; set; }
 
         [ForeignKey(nameof(Profile))]
-        public Profile ProfileId { get; set; }
+        public int ProfileId { get; set; }
+        public string UserName { get; set; }
+        public virtual Profile Profile { get; set; }
 
-        //property for User Name?
-
-        public DateTime BetDate { get; set; }
+        [Required]
+        public string BetDate { get; set; }
+        [Required]
         public string Bet { get; set; }
+        [Required]
+
         public decimal Risked { get; set; }
+        [Required]
         public int Odds { get; set; }
-        public char Result { get; set; }
+        public string Result { get; set; }
+
+       
         public decimal Payout { get; set; }
+
+        public virtual ICollection<Comment> CollectionComment { get; set; }
     }
 }

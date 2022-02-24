@@ -14,7 +14,11 @@ namespace GraysSportAlmanac.Data
 
         public Guid  OwnerId { get; set; }
 
+        [Required]
         public string UserName { get; set; }
+
+        [Required]
+        public string Bio { get; set; }
 
         public string Record { get; set; }
 
@@ -24,7 +28,13 @@ namespace GraysSportAlmanac.Data
 
         public int Units { get; set; }
 
+        public virtual ICollection<Post> CollectionPost { get; set; }
+       // public virtual ICollection<GroupPost> CollectionGroupPost { get; set; }
 
+        public virtual ICollection<Comment> CollectionComment{ get; set; }
+
+        public virtual ICollection<FAQ> CollectionFaq { get; set; }
+        public virtual ICollection<Answer> CollectionAnswer { get; set; }
 
     }
 }

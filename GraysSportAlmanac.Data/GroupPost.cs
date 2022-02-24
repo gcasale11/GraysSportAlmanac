@@ -11,19 +11,28 @@ namespace GraysSportAlmanac.Data
     public class GroupPost
     {
         [Key]
-        public Guid GroupPostId { get; set; }
+        public int GroupPostId { get; set; }
+        public Guid AuthorId { get; set; }
 
-        //I think this might need to be in the Group instead of here but not 100% sure
+        
+        /*
         [ForeignKey(nameof(Group))]
-        public Group GroupId { get; set; }
+        public int GroupId { get; set; }
+        public virtual Group Group { get; set; }
 
         [ForeignKey(nameof(Profile))]
-        public Profile ProfileId { get; set; }
+        public int ProfileId { get; set; }
+        public virtual Profile Profile { get; set; }
+        */
 
-        public DateTime BetDate { get; set; }
+        public string BetDate { get; set; }
         public decimal Risked { get; set; }
         public int Odds { get; set; }
         public string Result { get; set; }
         public decimal Payout { get; set; }
+
+        public virtual ICollection<Comment> CollectionComment { get; set; }
+        
+
     }
 }

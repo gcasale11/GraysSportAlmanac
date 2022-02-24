@@ -10,8 +10,8 @@ using System.Web.Http;
 
 namespace GraysSportAlmanac.WebAPI.Controllers
 {
-    [Authorize]
-    [RoutePrefix("api/profile")]
+    
+    [RoutePrefix("api/comment")]
     public class CommentController : ApiController
     {
         public IHttpActionResult Get()
@@ -21,6 +21,7 @@ namespace GraysSportAlmanac.WebAPI.Controllers
             return Ok(comments);
         }
 
+        [Authorize] //anything that user modifys
         public IHttpActionResult Post(CommentCreate comment)
         {
             if (!ModelState.IsValid)
@@ -34,6 +35,7 @@ namespace GraysSportAlmanac.WebAPI.Controllers
             return Ok();
         }
 
+
         private CommentService CreateCommentService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -41,6 +43,7 @@ namespace GraysSportAlmanac.WebAPI.Controllers
             return commentService;
         }
 
+        
         public IHttpActionResult Get(int id)
         {
             CommentService commentService = CreateCommentService();
@@ -48,6 +51,7 @@ namespace GraysSportAlmanac.WebAPI.Controllers
             return Ok(comment);
         }
 
+        [Authorize]
         public IHttpActionResult Put(CommentEdit comment)
         {
             if (!ModelState.IsValid)
@@ -62,6 +66,7 @@ namespace GraysSportAlmanac.WebAPI.Controllers
 
         }
 
+        [Authorize]
         public IHttpActionResult Delete(int id)
         {
             var service = CreateCommentService();

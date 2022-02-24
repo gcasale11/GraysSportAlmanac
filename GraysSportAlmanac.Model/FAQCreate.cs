@@ -7,21 +7,12 @@ using System.Threading.Tasks;
 
 namespace GraysSportAlmanac.Model
 {
-    public class CommentCreate
+    public class FAQCreate
     {
-        
-        [Required]
-        public string ContentComment { get; set; }
-
-
+        public string Question { get; set; }
         public int ProfileId { get; set; }
-      
-        public int PostId { get; set; }
 
-        public int? FaqId { get; set; }
-
-       // public int GroupPostId { get; set; }
-
+        
 
     }
 }

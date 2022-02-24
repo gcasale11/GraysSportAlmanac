@@ -8,26 +8,24 @@ using System.Threading.Tasks;
 
 namespace GraysSportAlmanac.Data
 {
-  public class Group
+   public class Answer
     {
         [Key]
-        public int GroupId { get; set; }
+        public int AnswerId { get; set; }
         public Guid AuthorId { get; set; }
 
-        /*
-        [ForeignKey (nameof(Profile))]
+
+        public string AnswerContent { get; set; }
+
+        [ForeignKey(nameof(FAQ))]
+        public int FAQId { get; set; }
+        public virtual FAQ FAQ { get; set; }
+
+        [ForeignKey(nameof(Profile))]
         public int ProfileId { get; set; }
+        public string UserName { get; set; }
         public virtual Profile Profile { get; set; }
-        */
 
-        public string GroupName { get; set; }
 
-       // public List<Group> ListofMembers { get; set; }
-        public int RankingWL { get; set; }
-        public int RankingTA { get; set; }
-        
-
-        public virtual ICollection<GroupPost> CollectionGroupPost { get; set; }
-      
     }
 }

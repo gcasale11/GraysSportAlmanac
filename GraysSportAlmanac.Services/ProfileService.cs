@@ -23,11 +23,13 @@ namespace GraysSportAlmanac.Services
                 {
                     OwnerId = _userId,
                     UserName = model.UserName,
-                    /*Record = model.Record,
+                    Bio = model.Bio,
+                    Record = model.Record,
                     TotalRisked = model.TotalRisked,
                     TotalAccount = model.TotalAccount,
                     UnitSize = model.UnitSize,
-                    Units = model.Units*/
+                    Units = model.Units
+                    
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -52,7 +54,12 @@ namespace GraysSportAlmanac.Services
                         {
                             ProfileId = e.ProfileId,
                             UserName = e.UserName,
-                            Record = e.Record
+                            Bio = e.Bio,
+                            Record = e.Record,
+                            TotalRisked = e.TotalRisked,
+                            TotalAccount = e.TotalAccount,
+                            UnitSize = e.UnitSize,
+                            Units = e.Units
                         }
                         );
                 return query.ToArray();
@@ -73,7 +80,10 @@ namespace GraysSportAlmanac.Services
                             ProfileId = entity.ProfileId,
                             OwnerId = entity.OwnerId,
                             UserName = entity.UserName,
+                            Bio = entity.Bio,
                             Record = entity.Record,
+                            TotalRisked = entity.TotalRisked,
+                            TotalAccount = entity.TotalAccount,
                             UnitSize = entity.UnitSize,
                             Units = entity.Units
                         };
@@ -89,11 +99,10 @@ namespace GraysSportAlmanac.Services
                         .Profiles
                         .Single(e => e.ProfileId == model.ProfileId && e.OwnerId == _userId);
 
-                        entity.Record = model.Record;
-                        entity.TotalRisked = model.TotalRisked;
-                        entity.TotalAccount = model.TotalAccount;
-                        entity.UnitSize = model.UnitSize;
-                        entity.Units = model.Units;
+                    entity.UserName = model.UserName;
+                    entity.Bio = model.Bio;
+
+                        
 
                     return ctx.SaveChanges() == 1;
                 }

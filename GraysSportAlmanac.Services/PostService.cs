@@ -14,7 +14,7 @@ namespace GraysSportAlmanac.Services
         
         public PostService(Guid postId)
         {
-            postId = _postId;
+            _postId = postId;
         }
 
         public bool CreatePost(PostCreate model)
@@ -22,13 +22,15 @@ namespace GraysSportAlmanac.Services
             var entity =
                 new Post()
                 {
-                    PostId = _postId,
+                    AuthorId = _postId,
+                    ProfileId = model.ProfileId,
+                    UserName = model.UserName,
                     BetDate = model.BetDate,
                     Bet = model.Bet,
                     Risked = model.Risked,
                     Odds = model.Odds,
                     Result = model.Result,
-                    Payout = model.Payout,
+                    Payout = model.Payout
 
                 };
             using (var ctx = new ApplicationDbContext())
@@ -45,30 +47,39 @@ namespace GraysSportAlmanac.Services
                 var query =
                     ctx
                     .Posts
-                    .Where(e => e.PostId == _postId)
+                    .Where(e => e.AuthorId == _postId)
                     .Select(
                         e =>
                         new PostListItem
                         {
-                            PostId = e.PostId
+                            PostId = e.PostId,
+                            ProfileId = e.ProfileId,
+                            UserName = e.Profile.UserName,
+                            BetDate = e.BetDate,
+                            Bet = e.Bet,
+                            Risked = e.Risked,
+                            Odds = e.Odds,
+                            Result = e.Result,
+                            Payout = e.Payout
                         }
                         );
                 return query.ToArray();
             }
         }
 
-        public PostDetail GetPostByID (Guid id)
+        public PostDetail GetPostByID (int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                     .Posts
-                    .Single(e => e.PostId == id && e.PostId == _postId);
+                    .Single(e => e.PostId == id && e.AuthorId == _postId);
                 return
                     new PostDetail
                     {
-                        PostId = entity.PostId,
+                        Result = entity.Result,
+                        Payout = entity.Payout
 
                     };
             }
@@ -82,19 +93,21 @@ namespace GraysSportAlmanac.Services
                     ctx
                     .Posts
                     .Single(e => e.PostId == model.PostId);
+                entity.Result = model.Result;
+                entity.Payout = model.Payout;
 
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        public bool DeletePost(Guid postId)
+        public bool DeletePost(int postId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                     .Posts
-                    .Single(e => e.PostId == postId);
+                    .Single(e => e.PostId == postId && e.AuthorId == _postId);
 
                 ctx.Posts.Remove(entity);
                 return ctx.SaveChanges() == 1;

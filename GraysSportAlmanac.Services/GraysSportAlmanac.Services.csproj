@@ -54,7 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnswerService.cs" />
     <Compile Include="CommentService.cs" />
+    <Compile Include="FaqService.cs" />
     <Compile Include="GroupPostService.cs" />
     <Compile Include="GroupService.cs" />
     <Compile Include="PostService.cs" />
