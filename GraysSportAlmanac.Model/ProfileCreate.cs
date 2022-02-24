@@ -17,6 +17,12 @@ namespace GraysSportAlmanac.Model
         [Display(Name = "Bio")]
         public string Bio { get; set; }
 
+        public int GroupId { get; set; }
+
+
+        [Display(Name = "Group Name")]
+        public string GroupName { get; set; }
+
         [Display(Name = "Record W-L-P")]
         public string Record { get; set; }
 

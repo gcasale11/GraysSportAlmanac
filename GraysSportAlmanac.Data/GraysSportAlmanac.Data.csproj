@@ -58,12 +58,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Answer.cs" />
+    <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="FAQ.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="GroupPost.cs" />
-    <Compile Include="IdentityModels.cs" />
+    <Compile Include="IdentityUserRoleConfiguration.cs" />
+    <Compile Include="IdentityUserLoginConfiguration.cs" />
     <Compile Include="Migrations\202202240056528_Working.cs" />
     <Compile Include="Migrations\202202240056528_Working.Designer.cs">
       <DependentUpon>202202240056528_Working.cs</DependentUpon>
