@@ -17,8 +17,8 @@ namespace GraysSportAlmanac.Model
         public int ProfileId { get; set; }
         public string UserName { get; set; }
 
-        public int CommentId { get; set; }
-        public string ContentComment { get; set; }
+        public int AnswerId { get; set; }
+        public string AnswerContent { get; set; }
 
         [Display(Name = "Create")]
         public DateTimeOffset CreateUtc { get; set; }

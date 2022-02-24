@@ -22,10 +22,10 @@ namespace GraysSportAlmanac.Services
                 new Answer()
                 {
                     AuthorId = _answerId,
+                    AnswerContent = model.AnswerContent,
                     FAQId = model.FAQId,
                     ProfileId = model.ProfileId,
                     UserName = model.UserName,
-                    AnswerContent = model.AnswerContent,
 
                 };
             using (var ctx = new ApplicationDbContext())
@@ -47,6 +47,7 @@ namespace GraysSportAlmanac.Services
                         e =>
                         new AnswerListItem
                         {
+                            AnswerId = e.AnswerId,
                             ProfileId = e.Profile.ProfileId,
                             FAQId = e.FAQ.FaqId,
                             UserName = e.Profile.UserName,

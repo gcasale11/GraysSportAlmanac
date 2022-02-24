@@ -52,6 +52,7 @@ namespace GraysSportAlmanac.Services
                         e =>
                         new PostListItem
                         {
+                            PostId = e.PostId,
                             ProfileId = e.ProfileId,
                             UserName = e.Profile.UserName,
                             BetDate = e.BetDate,
@@ -99,14 +100,14 @@ namespace GraysSportAlmanac.Services
             }
         }
 
-        public bool DeletePost(Guid postId)
+        public bool DeletePost(int postId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                     .Posts
-                    .Single(e => e.AuthorId == postId);
+                    .Single(e => e.PostId == postId && e.AuthorId == _postId);
 
                 ctx.Posts.Remove(entity);
                 return ctx.SaveChanges() == 1;

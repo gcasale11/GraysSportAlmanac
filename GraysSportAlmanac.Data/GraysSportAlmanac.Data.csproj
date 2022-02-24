@@ -64,6 +64,11 @@
     <Compile Include="Group.cs" />
     <Compile Include="GroupPost.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202202240056528_Working.cs" />
+    <Compile Include="Migrations\202202240056528_Working.Designer.cs">
+      <DependentUpon>202202240056528_Working.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,6 +76,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202202240056528_Working.resx">
+      <DependentUpon>202202240056528_Working.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

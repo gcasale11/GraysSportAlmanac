@@ -62,7 +62,20 @@ namespace GraysSportAlmanac.WebAPI.Controllers
                 return InternalServerError();
 
             return Ok();
+
         }
+            [Authorize]
+
+        public IHttpActionResult Delete(int id)
+            {
+                var service = CreatePostService();
+
+            if (!service.DeletePost(id))
+                return InternalServerError();
+
+            return Ok();
+
+            }
 
     }
 }
