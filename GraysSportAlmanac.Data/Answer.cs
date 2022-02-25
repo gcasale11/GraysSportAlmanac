@@ -18,7 +18,7 @@ namespace GraysSportAlmanac.Data
         public string AnswerContent { get; set; }
 
         [ForeignKey(nameof(FAQ))]
-        public int FAQId { get; set; }
+        public int FaqId { get; set; }
         public virtual FAQ FAQ { get; set; }
 
         [ForeignKey(nameof(Profile))]

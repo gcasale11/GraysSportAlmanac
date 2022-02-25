@@ -24,7 +24,6 @@ namespace GraysSportAlmanac.Services
                 {
                     AuthorId = _postId,
                     ProfileId = model.ProfileId,
-                    UserName = model.UserName,
                     BetDate = model.BetDate,
                     Bet = model.Bet,
                     Risked = model.Risked,

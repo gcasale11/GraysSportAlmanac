@@ -18,6 +18,7 @@ namespace GraysSportAlmanac.Model
         [Display(Name = "Bio")]
         public string Bio { get; set; }
 
+
         [Display(Name = "Record W-L-P")]
         public string Record { get; set; }
 
