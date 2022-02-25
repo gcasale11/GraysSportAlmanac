@@ -37,8 +37,8 @@ namespace GraysSportAlmanac.Data
         public string GroupName { get; set; }
 
         public virtual ICollection<Post> CollectionPost { get; set; }
-       
-        public virtual ICollection<Group> CollectionGroup { get; set; }
+        
+
 
         public virtual ICollection<Comment> CollectionComment{ get; set; }
 

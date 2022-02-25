@@ -66,9 +66,9 @@
     <Compile Include="GroupPost.cs" />
     <Compile Include="IdentityUserRoleConfiguration.cs" />
     <Compile Include="IdentityUserLoginConfiguration.cs" />
-    <Compile Include="Migrations\202202240056528_Working.cs" />
-    <Compile Include="Migrations\202202240056528_Working.Designer.cs">
-      <DependentUpon>202202240056528_Working.cs</DependentUpon>
+    <Compile Include="Migrations\202202250113414_Test.cs" />
+    <Compile Include="Migrations\202202250113414_Test.Designer.cs">
+      <DependentUpon>202202250113414_Test.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
@@ -80,8 +80,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202202240056528_Working.resx">
-      <DependentUpon>202202240056528_Working.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202250113414_Test.resx">
+      <DependentUpon>202202250113414_Test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

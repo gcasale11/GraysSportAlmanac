@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GraysSportAlmanac.Services
-{/*
+{
     public class GroupService
     {
         private readonly Guid _groupId;
@@ -23,11 +23,9 @@ namespace GraysSportAlmanac.Services
                 new Group()
                 {
                     AuthorId = _groupId,
-                    ProfileId = model.ProfileId,
                     GroupName = model.GroupName,
                     RankingWL = model.RankingWL,
                     RankingTA = model.RankingTA,
-                    ListofPosts = model.ListofPosts
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -48,28 +46,32 @@ namespace GraysSportAlmanac.Services
                         e =>
                         new GroupListItem
                         {
+                            GroupID = e.GroupId,
                             GroupName = e.GroupName,
                             RankingWL = e.RankingWL,
                             RankingTA = e.RankingTA,
-                            ListofPosts = e.ListofPosts
                         }
                         );
                 return query.ToArray();
             }
         }
 
-        public GroupDetail GetGroupByID (Guid id)
+        public GroupDetail GetGroupByID (int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                     .Groups
-                    .Single(e => e.AuthorId == id && e.AuthorId == _groupId);
+                    .Single(e => e.GroupId == id && e.AuthorId == _groupId);
                 return
                     new GroupDetail
                     {
                         GroupId = entity.GroupId,
+                        GroupName = entity.GroupName,
+                        RankingWL = entity.RankingWL,
+                        RankingTA = entity.RankingTA,
+                        
                     };
             }
         }
@@ -86,17 +88,17 @@ namespace GraysSportAlmanac.Services
             }
         }
 
-        public bool DeleteGroup(Guid groupId)
+        public bool DeleteGroup(int groupId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                     .Groups
-                    .Single(e => e.AuthorId == groupId);
+                    .Single(e => e.GroupId == groupId && e.AuthorId == _groupId);
                 ctx.Groups.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
     }
-*/}
+}

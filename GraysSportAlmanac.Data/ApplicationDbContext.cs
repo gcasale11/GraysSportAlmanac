@@ -23,10 +23,10 @@ namespace GraysSportAlmanac.Data
         public DbSet<Post> Posts { get; set; }
         public DbSet<FAQ> FAQs { get; set; }
         public DbSet<Comment> Comments { get; set; }
-        /*
+        
         public DbSet<Group> Groups { get; set; }
-        public DbSet<GroupPost> GroupPosts { get; set; }
-        */
+        //public DbSet<GroupPost> GroupPosts { get; set; }
+        
         public DbSet<Answer> Answers { get; set; }
 
 
