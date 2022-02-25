@@ -34,9 +34,7 @@ namespace GraysSportAlmanac.Data
 
         public virtual Post Post { get; set; }
 
-        [ForeignKey(nameof(FAQ))]
-        public int? FaqId { get; set; }
-        public virtual FAQ FAQ { get; set; }
+        
 /*
         [ForeignKey(nameof(GroupPost))]
         public int GroupPostId { get; set; }

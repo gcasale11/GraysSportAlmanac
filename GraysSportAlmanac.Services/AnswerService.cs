@@ -23,9 +23,9 @@ namespace GraysSportAlmanac.Services
                 {
                     AuthorId = _answerId,
                     AnswerContent = model.AnswerContent,
-                    FAQId = model.FAQId,
                     ProfileId = model.ProfileId,
-                    UserName = model.UserName,
+                    FaqId = model.FaqId,
+
 
                 };
             using (var ctx = new ApplicationDbContext())
@@ -49,9 +49,10 @@ namespace GraysSportAlmanac.Services
                         {
                             AnswerId = e.AnswerId,
                             ProfileId = e.Profile.ProfileId,
-                            FAQId = e.FAQ.FaqId,
+                            FaqId = e.FAQ.FaqId,
                             UserName = e.Profile.UserName,
-                            AnswerContent = e.AnswerContent
+                            AnswerContent = e.AnswerContent,
+                
                         });
                 return query.ToArray();
             }
@@ -68,6 +69,7 @@ namespace GraysSportAlmanac.Services
                 return
                     new AnswerDetail
                     {
+                        
                         AnswerContent = entity.AnswerContent
                     };
             }

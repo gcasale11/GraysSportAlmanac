@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,8 +29,16 @@ namespace GraysSportAlmanac.Data
 
         public int Units { get; set; }
 
+
+        [ForeignKey(nameof(Group))]
+        public int GroupId { get; set; }
+        public virtual Group Group { get; set; }
+
+        public string GroupName { get; set; }
+
         public virtual ICollection<Post> CollectionPost { get; set; }
-       // public virtual ICollection<GroupPost> CollectionGroupPost { get; set; }
+        
+
 
         public virtual ICollection<Comment> CollectionComment{ get; set; }
 

@@ -9,7 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 
 namespace GraysSportAlmanac.WebAPI.Controllers
-{/*
+{
    
     [RoutePrefix("api/Group")]
     public class GroupController : ApiController
@@ -43,7 +43,7 @@ namespace GraysSportAlmanac.WebAPI.Controllers
             return groupService;
         }
 
-        public IHttpActionResult Get(Guid id)
+        public IHttpActionResult Get(int id)
         {
             GroupService groupService = CreateGroupService();
             var group = groupService.GetGroupByID(id);
@@ -65,7 +65,7 @@ namespace GraysSportAlmanac.WebAPI.Controllers
         }
 
         [Authorize]
-        public IHttpActionResult Delete(Guid id)
+        public IHttpActionResult Delete(int id)
         {
             var service = CreateGroupService();
             if (!service.DeleteGroup(id))
@@ -76,4 +76,4 @@ namespace GraysSportAlmanac.WebAPI.Controllers
 
 
     }
-*/}
+}

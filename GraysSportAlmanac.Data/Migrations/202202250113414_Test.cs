@@ -3,7 +3,7 @@ namespace GraysSportAlmanac.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Working : DbMigration
+    public partial class Test : DbMigration
     {
         public override void Up()
         {
@@ -14,14 +14,14 @@ namespace GraysSportAlmanac.Data.Migrations
                         AnswerId = c.Int(nullable: false, identity: true),
                         AuthorId = c.Guid(nullable: false),
                         AnswerContent = c.String(),
-                        FAQId = c.Int(nullable: false),
+                        FaqId = c.Int(nullable: false),
                         ProfileId = c.Int(nullable: false),
                         UserName = c.String(),
                     })
                 .PrimaryKey(t => t.AnswerId)
-                .ForeignKey("dbo.FAQ", t => t.FAQId, cascadeDelete: false)
+                .ForeignKey("dbo.FAQ", t => t.FaqId, cascadeDelete: false)
                 .ForeignKey("dbo.Profile", t => t.ProfileId, cascadeDelete: false)
-                .Index(t => t.FAQId)
+                .Index(t => t.FaqId)
                 .Index(t => t.ProfileId);
             
             CreateTable(
@@ -50,8 +50,12 @@ namespace GraysSportAlmanac.Data.Migrations
                         TotalAccount = c.Decimal(nullable: false, precision: 18, scale: 2),
                         UnitSize = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Units = c.Int(nullable: false),
+                        GroupId = c.Int(nullable: false),
+                        GroupName = c.String(),
                     })
-                .PrimaryKey(t => t.ProfileId);
+                .PrimaryKey(t => t.ProfileId)
+                .ForeignKey("dbo.Group", t => t.GroupId, cascadeDelete: false)
+                .Index(t => t.GroupId);
             
             CreateTable(
                 "dbo.Comment",
@@ -65,14 +69,17 @@ namespace GraysSportAlmanac.Data.Migrations
                         ProfileId = c.Int(nullable: false),
                         PostId = c.Int(nullable: false),
                         FaqId = c.Int(),
+                        GroupPost_GroupPostId = c.Int(),
                     })
                 .PrimaryKey(t => t.CommentId)
                 .ForeignKey("dbo.FAQ", t => t.FaqId)
                 .ForeignKey("dbo.Post", t => t.PostId, cascadeDelete: false)
                 .ForeignKey("dbo.Profile", t => t.ProfileId, cascadeDelete: false)
+                .ForeignKey("dbo.GroupPost", t => t.GroupPost_GroupPostId)
                 .Index(t => t.ProfileId)
                 .Index(t => t.PostId)
-                .Index(t => t.FaqId);
+                .Index(t => t.FaqId)
+                .Index(t => t.GroupPost_GroupPostId);
             
             CreateTable(
                 "dbo.Post",
@@ -92,6 +99,35 @@ namespace GraysSportAlmanac.Data.Migrations
                 .PrimaryKey(t => t.PostId)
                 .ForeignKey("dbo.Profile", t => t.ProfileId, cascadeDelete: false)
                 .Index(t => t.ProfileId);
+            
+            CreateTable(
+                "dbo.Group",
+                c => new
+                    {
+                        GroupId = c.Int(nullable: false, identity: true),
+                        AuthorId = c.Guid(nullable: false),
+                        GroupName = c.String(),
+                        RankingWL = c.Int(nullable: false),
+                        RankingTA = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.GroupId);
+            
+            CreateTable(
+                "dbo.GroupPost",
+                c => new
+                    {
+                        GroupPostId = c.Int(nullable: false, identity: true),
+                        AuthorId = c.Guid(nullable: false),
+                        BetDate = c.String(),
+                        Risked = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Odds = c.Int(nullable: false),
+                        Result = c.String(),
+                        Payout = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Group_GroupId = c.Int(),
+                    })
+                .PrimaryKey(t => t.GroupPostId)
+                .ForeignKey("dbo.Group", t => t.Group_GroupId)
+                .Index(t => t.Group_GroupId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -172,8 +208,11 @@ namespace GraysSportAlmanac.Data.Migrations
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
             DropForeignKey("dbo.Answer", "ProfileId", "dbo.Profile");
-            DropForeignKey("dbo.Answer", "FAQId", "dbo.FAQ");
+            DropForeignKey("dbo.Answer", "FaqId", "dbo.FAQ");
             DropForeignKey("dbo.FAQ", "ProfileId", "dbo.Profile");
+            DropForeignKey("dbo.Profile", "GroupId", "dbo.Group");
+            DropForeignKey("dbo.GroupPost", "Group_GroupId", "dbo.Group");
+            DropForeignKey("dbo.Comment", "GroupPost_GroupPostId", "dbo.GroupPost");
             DropForeignKey("dbo.Comment", "ProfileId", "dbo.Profile");
             DropForeignKey("dbo.Comment", "PostId", "dbo.Post");
             DropForeignKey("dbo.Post", "ProfileId", "dbo.Profile");
@@ -182,18 +221,23 @@ namespace GraysSportAlmanac.Data.Migrations
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.GroupPost", new[] { "Group_GroupId" });
             DropIndex("dbo.Post", new[] { "ProfileId" });
+            DropIndex("dbo.Comment", new[] { "GroupPost_GroupPostId" });
             DropIndex("dbo.Comment", new[] { "FaqId" });
             DropIndex("dbo.Comment", new[] { "PostId" });
             DropIndex("dbo.Comment", new[] { "ProfileId" });
+            DropIndex("dbo.Profile", new[] { "GroupId" });
             DropIndex("dbo.FAQ", new[] { "ProfileId" });
             DropIndex("dbo.Answer", new[] { "ProfileId" });
-            DropIndex("dbo.Answer", new[] { "FAQId" });
+            DropIndex("dbo.Answer", new[] { "FaqId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.GroupPost");
+            DropTable("dbo.Group");
             DropTable("dbo.Post");
             DropTable("dbo.Comment");
             DropTable("dbo.Profile");

@@ -14,20 +14,23 @@ namespace GraysSportAlmanac.Data
         public int GroupId { get; set; }
         public Guid AuthorId { get; set; }
 
-        /*
-        [ForeignKey (nameof(Profile))]
+
+        /*[ForeignKey(nameof(Profile))]
         public int ProfileId { get; set; }
-        public virtual Profile Profile { get; set; }
-        */
+        public virtual Profile Profile { get; set; }*/
+
 
         public string GroupName { get; set; }
 
-       // public List<Group> ListofMembers { get; set; }
+       
         public int RankingWL { get; set; }
         public int RankingTA { get; set; }
         
 
         public virtual ICollection<GroupPost> CollectionGroupPost { get; set; }
+        public virtual ICollection<Profile> CollectionProfile { get; set; }
+        
+
       
     }
 }
